@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": 1000,
     "categorie": "pâtisserie",
     "nom": "pate à choux",
     "tag": ["pate", "choux", "eclair"],
@@ -14,7 +14,7 @@
     "instruction": "cuire environ 45 min à 200°C pour des éclairs"
   },
   {
-    "id": 2,
+    "id": 2000,
     "categorie": "confiserie",
     "nom": "crocodile gélifié",
     "tag": ["bonbon", "gélifié", "crocodile"],
@@ -30,7 +30,7 @@
     "instruction": "Pour environ 270 bonbons"
   },
   {
-    "id": 3,
+    "id": 2001,
     "categorie": "confiserie",
     "nom": "banane",
     "tag": ["bonbon", "banane", "guimauve"],
@@ -46,7 +46,7 @@
     "instruction": "Pour environ 120 bonbons"
   },
   {
-    "id": 4,
+    "id": 2003,
     "categorie": "confiserie",
     "nom": "tagada",
     "tag": ["bonbon", "fraise", "tagada"],
@@ -62,7 +62,7 @@
     "instruction": "Pour environ 60 bonbons"
   },
   {
-    "id": 5,
+    "id": 1001,
     "categorie": "pâtisserie",
     "nom": "crème pâtissière",
     "tag": ["crème", "pâtissière", "garnir"],
