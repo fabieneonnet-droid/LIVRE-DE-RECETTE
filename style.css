@@ -1,0 +1,181 @@
+
+
+
+body {
+    font-family: Arial;
+    margin: 20px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: linear-gradient(180deg, #faa330,rgb(255, 255, 255) );
+}
+
+h1 {
+    text-align: center;
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: white;
+    text-shadow: 5px 5px 3px black;
+
+
+}
+h2{
+    text-align: center;
+    font-size: 5rem;
+    color: #faa330;
+    text-shadow: 5px 5px 3px black;
+    margin: 0;
+    letter-spacing: 3px;
+}
+h3{
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px #faa330;
+}
+ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+li{
+    padding: 25px;
+    font-size: 2rem;
+}
+p{
+    color: #4e4d4db4;
+    letter-spacing: 3px;
+    font-size: 1.5rem;
+}
+
+
+.formulaire {
+    background: rgba(238, 167, 75, 0.76);
+    padding: 20px 100px;
+    border: 2px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+input, textarea, select {
+    width: 70%;
+    margin: 10px ;
+    padding: 8px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 2rem;
+
+}
+
+button {
+    background-color: #ff8c42;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+    
+}
+
+.recette {
+    background: white;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+#listeRecettes{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    padding: 30px;
+}
+.recette-card{
+    padding: 15px;
+    border-radius: 25px;
+    box-shadow: -1px -1px 5px 1px rgba(0, 0, 0, 0.644);
+    background-image: linear-gradient(160deg, rgba(255, 255, 255, 0.418) 0%, rgba(255, 255, 255, 0.651) 100%);
+    margin: 10px;
+}
+.hidden{
+    display: none;
+}
+.cat-item {
+    cursor: pointer; /* Change le curseur en main */
+    padding: 5px 10px;
+    transition: background 0.3s;
+    border-radius: 25px;
+    margin: 0 50px
+}
+
+.cat-item:hover {
+    background-color: #f0f0f0; /* Change la couleur au survol */
+    border-radius: 25px;
+    
+    color: #ff4500; /* Change la couleur du texte */
+}
+.ingredients-liste p {
+    margin: 2px 0; /* Espace réduit entre chaque ligne d'ingrédient */
+    font-size: 0.9em;
+}
+
+.instruction {
+    font-style: italic;
+    color: #e40707;
+}
+
+
+
+/* La fenêtre modale (le fond sombre) */
+.modal {
+    display: none; /* Cachée par défaut */
+    position: fixed; /* Reste en place même si on scrolle */
+    z-index: 1000; /* S'affiche au-dessus de tout */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6); /* Fond noir semi-transparent */
+    overflow: auto; /* Ajoute un scroll si la recette est longue */
+}
+
+/* Le contenu de la modale (la boîte blanche) */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% du haut, centré horizontalement */
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; /* Largeur de la boîte */
+    max-width: 600px; /* Largeur max pour les grands écrans */
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Le bouton de fermeture (la croix) */
+.close-modal {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: black;
+}
+
+/* Style pour rendre les cards cliquables */
+.recette-card {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.recette-card:hover {
+    transform: scale(1.02); /* Petit effet de zoom au survol */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.item-ingredient {
+    font-size: 1.2rem; /* ou 18px */
+    list-style-type: none; /* si tu veux enlever les puces */
+    display: block;
+}

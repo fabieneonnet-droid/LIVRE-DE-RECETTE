@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "categorie": "pâtisserie",
+    "nom": "pate à choux",
+    "tag": ["pate", "choux", "eclair"],
+    "ingredients": [
+      "250 gr eau",
+      "5 gr sel",
+      "100 gr beurre",
+      "150 gr farine",
+      "200 gr oeufs"
+    ],
+    "instruction": "cuire environ 45 min à 200°C pour des éclairs"
+  },
+  {
+    "id": 2,
+    "categorie": "confiserie",
+    "nom": "crocodile gélifié",
+    "tag": ["bonbon", "gélifié", "crocodile"],
+    "ingredients": [
+      "70 gr gélatine",
+      "350 gr eau",
+      "515 gr sucre",
+      "423 gr glucose",
+      "135 gr eau",
+      "29 ml solution acide",
+      "9 ml arôme"
+    ],
+    "instruction": "Pour environ 270 bonbons"
+  },
+  {
+    "id": 3,
+    "categorie": "confiserie",
+    "nom": "banane",
+    "tag": ["bonbon", "banane", "guimauve"],
+    "ingredients": [
+      "27 gr gélatine",
+      "60 gr eau",
+      "350 gr sucre",
+      "100 gr eau",
+      "170 gr trimoline",
+      "50 gr sucre",
+      "4 gr arôme"
+    ],
+    "instruction": "Pour environ 120 bonbons"
+  },
+  {
+    "id": 4,
+    "categorie": "confiserie",
+    "nom": "tagada",
+    "tag": ["bonbon", "fraise", "tagada"],
+    "ingredients": [
+      "14 gr gélatine",
+      "30 gr eau",
+      "200 gr sucre",
+      "65 gr trimoline",
+      "50 gr eau",
+      "85 gr sucre trimoline",
+      "2 gr arôme"
+    ],
+    "instruction": "Pour environ 60 bonbons"
+  },
+  {
+    "id": 5,
+    "categorie": "pâtisserie",
+    "nom": "crème pâtissière",
+    "tag": ["crème", "pâtissière", "garnir"],
+    "ingredients": [
+      "1L de lait",
+      "200 gr sucre",
+      "80 gr poudre à crème",
+      "2 oeufs"
+    ],
+    "instruction": "bien pasteuriser"
+  }
+]

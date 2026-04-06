@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Mes Recettes</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h1>📖 Mes Recettes 📖</h1>
+    <input type="text" id="recherche" placeholder="recette">
+    <ul id="categories">
+        <li class="cat-item">Boulangerie</li>
+        <li class="cat-item">Pâtisserie</li>
+        <li class="cat-item">Viennoiserie</li>
+        <li class="cat-item">Confiserie</li>
+        <li class="cat-item">Chocolaterie</li>
+        <li class="cat-item">Glacerie</li>
+    </ul>
+
+    <div id="listeRecettes"></div>
+
+    <div id="modalRecette" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalDetails">
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
