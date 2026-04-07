@@ -9,14 +9,35 @@
 
 <body>
     <h1>📖 Mes Recettes 📖</h1>
-    <input type="text" id="recherche" placeholder="recette">
+    <div class="search-container">
+        <input type="text" id="recherche" placeholder="🔍 Rechercher une recette...">
+    </div>
+
     <ul id="categories">
-        <li class="cat-item">Boulangerie</li>
-        <li class="cat-item">Pâtisserie</li>
-        <li class="cat-item">Viennoiserie</li>
-        <li class="cat-item">Confiserie</li>
-        <li class="cat-item">Chocolaterie</li>
-        <li class="cat-item">Glacerie</li>
+        <li class="cat-item boulangerie box ">
+            <strong>Boulangerie</strong>
+            <div class="recettes-wrapper" id="list-boulangerie"></div>
+        </li>
+        <li class="cat-item patisserie box ">
+            <strong>Pâtisserie </strong>
+            <div class="recettes-wrapper" id="list-patisserie"></div>
+        </li>
+        <li class="cat-item confiserie box">
+            <strong>Confiserie </strong>
+            <div class="recettes-wrapper" id="list-confiserie"></div>
+        </li>
+        <li class="cat-item viennoiserie box">
+            <strong>Viennoiserie </strong>
+            <div class="recettes-wrapper" id="list-viennoiserie"></div>
+        </li>
+        <li class="cat-item chocolaterie box">
+            <strong>Chocolaterie </strong>
+            <div class="recettes-wrapper" id="list-chocolaterie"></div>
+        </li>
+        <li class="cat-item glacerie box">
+            <strong>Glacerie </strong>
+            <div class="recettes-wrapper box" id="list-glacerie"></div>
+        </li>
     </ul>
 
     <div id="listeRecettes"></div>

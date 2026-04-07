@@ -16,8 +16,11 @@ h1 {
     letter-spacing: 4px;
     color: white;
     text-shadow: 5px 5px 3px black;
-
-
+}
+@media screen and (max-width : 1170px){
+    h1{
+        font-size: 3rem;
+    }  
 }
 h2{
     text-align: center;
@@ -73,9 +76,62 @@ button {
     border: none;
     border-radius: 15px;
     padding: 10px;
-    cursor: pointer;
-    
+    cursor: pointer;    
 }
+
+.box{
+    position: relative;
+    color: black;
+    height: 350px;
+    color: white;
+    text-shadow: 2px 2px 4px #ff9100;
+    font-size: 500%; 
+}
+@media screen and (max-width : 1170px){
+    .box{
+        font-size: 3rem;
+    }  
+}
+@media screen and (max-width : 850px){
+    .box{
+        font-size: 1.5rem;
+    }  
+}
+
+
+.box::before{
+    content: "";
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    border-radius: 25px;
+}
+.box:hover{
+    align-content: center;
+    text-shadow: 15px 15px 20px #f3f3f2;
+}
+.boulangerie::before{
+    background-image: url(./assets/img/quel-pain-choisir-pour-sa-sante-1614002068.PNG)  ;
+}
+.patisserie::before{
+    background-image: url(./assets/img/images.webp);
+}   
+.confiserie::before{
+    background-image: url(./assets/img/La-confiserie-en-croissance-en-2021-apres-une-mauvaise-annee-2020-pointsdevente.jpg)  ;
+}
+.chocolaterie::before{
+    background-image: url(./assets/img/sebastien-et-la-chocolaterie-1600x900.png)  ;
+}
+.viennoiserie::before{ 
+    background-image: url(./assets/img/calories-comparaison-viennoiseries.jpg)  ;
+}
+.glacerie::before{
+    background-image: url(./assets/img/pot-glacerie-artisanale-768x431.jpeg.webp)  ;
+}
+
 
 .recette {
     background: white;
@@ -94,6 +150,7 @@ button {
     box-shadow: -1px -1px 5px 1px rgba(0, 0, 0, 0.644);
     background-image: linear-gradient(160deg, rgba(255, 255, 255, 0.418) 0%, rgba(255, 255, 255, 0.651) 100%);
     margin: 10px;
+    
 }
 .hidden{
     display: none;
@@ -103,17 +160,17 @@ button {
     padding: 5px 10px;
     transition: background 0.3s;
     border-radius: 25px;
-    margin: 0 50px
+    margin: 0 50px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .cat-item:hover {
-    background-color: #f0f0f0; /* Change la couleur au survol */
-    border-radius: 25px;
-    
-    color: #ff4500; /* Change la couleur du texte */
+    color: #ff4500;
+    font-size: 7rem;
 }
 .ingredients-liste p {
-    margin: 2px 0; /* Espace réduit entre chaque ligne d'ingrédient */
+    margin: 2px 0; 
     font-size: 0.9em;
 }
 
@@ -124,32 +181,32 @@ button {
 
 
 
-/* La fenêtre modale (le fond sombre) */
+
 .modal {
-    display: none; /* Cachée par défaut */
-    position: fixed; /* Reste en place même si on scrolle */
-    z-index: 1000; /* S'affiche au-dessus de tout */
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.6); /* Fond noir semi-transparent */
-    overflow: auto; /* Ajoute un scroll si la recette est longue */
+    background-color: rgba(0,0,0,0.6); 
+    overflow: auto; 
 }
 
-/* Le contenu de la modale (la boîte blanche) */
+
 .modal-content {
     background-color: #fefefe;
-    margin: 10% auto; /* 10% du haut, centré horizontalement */
+    margin: 10% auto; 
     padding: 20px;
     border-radius: 10px;
-    width: 80%; /* Largeur de la boîte */
-    max-width: 600px; /* Largeur max pour les grands écrans */
+    width: 80%; 
+    max-width: 600px; 
     position: relative;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Le bouton de fermeture (la croix) */
+
 .close-modal {
     color: #aaa;
     position: absolute;
@@ -164,18 +221,19 @@ button {
     color: black;
 }
 
-/* Style pour rendre les cards cliquables */
+
 .recette-card {
     cursor: pointer;
     transition: transform 0.2s;
 }
 
 .recette-card:hover {
-    transform: scale(1.02); /* Petit effet de zoom au survol */
+    transform: scale(1.02); 
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 .item-ingredient {
-    font-size: 1.2rem; /* ou 18px */
-    list-style-type: none; /* si tu veux enlever les puces */
+    font-size: 1.2rem; 
+    list-style-type: none; 
     display: block;
 }
+

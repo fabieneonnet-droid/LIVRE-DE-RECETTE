@@ -36,7 +36,7 @@ itemsCategories.forEach((item) => {
   item.addEventListener("click", () => {
     const catNom = item.textContent.trim().toLowerCase();
     const filtre = toutesLesRecettes.filter((recette) => {
-      if (recette.catégorie) {
+      if (recette.categorie) {
         return recette.categorie.toLowerCase() === catNom;
       }
       return false;
@@ -108,3 +108,33 @@ window.addEventListener("click", (e) => {
   if (e.target === modal) modal.style.display = "none";
 });
 //----------------------------------------------------------------------------------
+
+itemsCategories.forEach((item) => {
+  item.addEventListener("click", () => {
+    const catNom = item.textContent.trim().toLowerCase();
+
+    const tranches = {
+      boulangerie: { min: 0, max: 999 },
+      pâtisserie: { min: 1000, max: 1999 },
+      confiserie: { min: 2000, max: 2999 },
+      viennoiserie: { min: 3000, max: 3999 },
+      chocolaterie: { min: 4000, max: 4500 },
+      glacerie: { min: 5000, max: 5999 },
+    };
+
+    const limite = tranches[catNom];
+
+    const filtre = toutesLesRecettes.filter((recette) => {
+      if (limite) {
+        return recette.id >= limite.min && recette.id <= limite.max;
+      }
+      return false;
+    });
+
+    afficherRecettes(filtre);
+
+    barreRecherche.value = "";
+    menuCategories.style.display = "grid";
+    listeElement.scrollIntoView({ behavior: "smooth" });
+  });
+});
