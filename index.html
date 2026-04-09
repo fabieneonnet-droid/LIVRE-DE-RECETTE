@@ -8,37 +8,62 @@
 </head>
 
 <body>
-    <h1>📖 Mes Recettes 📖</h1>
-    <div class="search-container">
-        <input type="text" id="recherche" placeholder="🔍 Rechercher une recette...">
+    <div class="header-container">
+        <img src="./assets/img/cabosse.png" height=150px alt="cabosse cacao">
+        <h1> Livre de recettes </h1>
+        <img src="./assets/img/cabosse.png" height=150px alt="cabosse cacao">
+
+    </div>
+    <div class="descritif-container">
+        <p>Passionnée par l'authenticité des saveurs et le plaisir d'un travail bien fait.</p>
     </div>
 
-    <ul id="categories">
-        <li class="cat-item boulangerie box ">
-            <strong>Boulangerie</strong>
-            <div class="recettes-wrapper" id="list-boulangerie"></div>
-        </li>
-        <li class="cat-item patisserie box ">
-            <strong>Pâtisserie </strong>
-            <div class="recettes-wrapper" id="list-patisserie"></div>
-        </li>
-        <li class="cat-item confiserie box">
-            <strong>Confiserie </strong>
-            <div class="recettes-wrapper" id="list-confiserie"></div>
-        </li>
-        <li class="cat-item viennoiserie box">
-            <strong>Viennoiserie </strong>
-            <div class="recettes-wrapper" id="list-viennoiserie"></div>
-        </li>
-        <li class="cat-item chocolaterie box">
-            <strong>Chocolaterie </strong>
-            <div class="recettes-wrapper" id="list-chocolaterie"></div>
-        </li>
-        <li class="cat-item glacerie box">
-            <strong>Glacerie </strong>
-            <div class="recettes-wrapper box" id="list-glacerie"></div>
-        </li>
-    </ul>
+    <div class="categorie-container">
+        <div class="up-blue"></div>
+        <ul class=categorie id="categories">
+            <li class="cat-item boulangerie  ">
+                <div class="recettes-wrapper" id="list-boulangerie">
+                    <img src="./assets/img/quel-pain-choisir-pour-sa-sante-1614002068.PNG" height="200" alt="">
+                </div>
+                <strong>Boulangerie</strong>
+            </li>
+            <li class="cat-item   ">
+                <div class="recettes-wrapper" id="list-patisserie">
+                    <img src="./assets/img/images.webp" alt="">
+                </div>
+                <strong>Pâtisserie </strong>
+            </li>
+            <li class="cat-item  ">
+                <div class="recettes-wrapper" id="list-confiserie">
+                    <img src="./assets/img/La-confiserie-en-croissance-en-2021-apres-une-mauvaise-annee-2020-pointsdevente.jpg"
+                        alt="">
+                </div>
+                <strong>Confiserie </strong>
+            </li>
+            <li class="cat-item  ">
+                <div class="recettes-wrapper" id="list-viennoiserie">
+                    <img src="./assets/img/calories-comparaison-viennoiseries.jpg" alt="">
+                </div>
+                <strong>Viennoiserie </strong>
+            </li>
+            <li class="cat-item  ">
+                <div class="recettes-wrapper" id="list-chocolaterie">
+                    <img src="./assets/img/sebastien-et-la-chocolaterie-1600x900.png" alt="">
+                </div>
+                <strong>Chocolaterie </strong>
+            </li>
+            <li class="cat-item  ">
+                <div class="recettes-wrapper box" id="list-glacerie">
+                    <img src="./assets/img/pot-glacerie-artisanale-768x431.jpeg.webp" alt="">
+                </div>
+                <strong>Glacerie </strong>
+            </li>
+        </ul>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="recherche" placeholder=" Rechercher une recette...">
+    </div>
 
     <div id="listeRecettes"></div>
 
