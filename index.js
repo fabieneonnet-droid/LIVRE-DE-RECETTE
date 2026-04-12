@@ -10,13 +10,12 @@ const closeModalBtn = document.querySelector(".close-modal");
 let toutesLesRecettes = [];
 
 // 1. Chargement des données
-fetch("recettes.json")
+fetch("http://localhost:3000/recettes")
   .then((res) => res.json())
   .then((data) => {
     toutesLesRecettes = data;
     afficherRecettes(toutesLesRecettes);
-  })
-  .catch((err) => console.error("Problème de chargement :", err));
+  });
 
 // 2. Événement de recherche
 barreRecherche.addEventListener("input", (e) => {
@@ -138,3 +137,111 @@ itemsCategories.forEach((item) => {
     listeElement.scrollIntoView({ behavior: "smooth" });
   });
 });
+
+//-------------------------------------------------------------------------------------------
+const modals = document.getElementById("recipeModal");
+const btn = document.getElementById("addRecipeBtn");
+const span = document.getElementsByClassName("close")[0];
+
+// Ouvrir la fenêtre au clic
+btn.onclick = function () {
+  modals.style.display = "block";
+};
+
+// Fermer au clic sur le X
+span.onclick = function () {
+  modals.style.display = "none";
+};
+
+// Fermer si on clique en dehors de la fenêtre
+window.onclick = function (event) {
+  if (event.target == modals) {
+    modals.style.display = "none";
+  }
+};
+
+//------------------------------------------------------------------------------------------------
+// --- GESTION DE L'AJOUT DE RECETTE ---
+const recipeForm = document.getElementById("recipeForm");
+
+recipeForm.addEventListener("submit", (e) => {
+  e.preventDefault(); // Empêche le rechargement de la page
+
+  // 1. Récupérer les valeurs
+  const nom = document.getElementById("recipeName").value;
+  const cat = document.getElementById("categorie").value;
+  const ingredientsBruts = document.getElementById("recipeIngredient").value;
+  const instruction = document.getElementById("recipeInstruction").value;
+
+  if (!nom || !instruction) {
+    alert("Veuillez remplir au moins le nom et les instructions.");
+    return;
+  }
+
+  // 2. Transformer le texte des ingrédients en tableau
+  // On sépare par ligne ou par virgule
+  const ingredientsArray = ingredientsBruts
+    .split(/[,\n]/)
+    .map((ing) => ing.trim())
+    .filter((ing) => ing !== "");
+
+  // 3. Générer l'ID automatique selon tes tranches
+  const nouvelId = genererProchainID(cat);
+
+  // 4. Créer l'objet recette
+  const nouvelleRecette = {
+    id: nouvelId,
+    categorie: cat,
+    nom: nom,
+    tag: [cat], // Tag par défaut
+    ingredients: ingredientsArray,
+    instruction: instruction,
+  };
+
+  // Remplace ton ancienne logique d'enregistrement par celle-ci :
+  fetch("http://localhost:3000/ajouter-recette", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(nouvelleRecette),
+  })
+    .then((res) => res.json())
+    .then((response) => {
+      alert(response.message);
+      location.reload(); // Recharge la page pour voir la nouvelle liste
+    });
+
+  // On ferme la modale
+  modals.style.display = "none";
+  recipeForm.reset();
+
+  // On affiche la catégorie pour voir notre nouvelle recette
+  const filtre = toutesLesRecettes.filter((r) => r.id === nouvelId);
+  afficherRecettes(filtre);
+
+  alert(`Recette ajoutée avec succès ! ID attribué : ${nouvelId}`);
+  console.log("Fichier JSON virtuel mis à jour :", toutesLesRecettes);
+});
+
+// Fonction pour calculer l'ID selon tes tranches existantes
+function genererProchainID(categorie) {
+  const tranches = {
+    boulangerie: 0,
+    patisserie: 1000,
+    confiserie: 2000,
+    viennoiserie: 3000,
+    chocolaterie: 4000,
+    glacerie: 5000,
+  };
+
+  const min = tranches[categorie] || 9000;
+  const max = min + 999;
+
+  // Trouver les IDs de cette catégorie
+  const idsExistants = toutesLesRecettes
+    .filter((r) => r.id >= min && r.id <= max)
+    .map((r) => r.id);
+
+  if (idsExistants.length === 0) return min;
+
+  return Math.max(...idsExistants) + 1;
+}
