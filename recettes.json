@@ -3,11 +3,7 @@
     "id": 1000,
     "categorie": "pâtisserie",
     "nom": "pate à choux",
-    "tag": [
-      "pate",
-      "choux",
-      "eclair"
-    ],
+    "tag": ["pate", "choux", "eclair"],
     "ingredients": [
       "250 gr eau",
       "5 gr sel",
@@ -21,11 +17,7 @@
     "id": 1001,
     "categorie": "pâtisserie",
     "nom": "crème pâtissière",
-    "tag": [
-      "crème",
-      "pâtissière",
-      "garnir"
-    ],
+    "tag": ["crème", "pâtissière", "garnir"],
     "ingredients": [
       "1L de lait",
       "200 gr sucre",
@@ -38,11 +30,7 @@
     "id": 2000,
     "categorie": "confiserie",
     "nom": "crocodile gélifié",
-    "tag": [
-      "bonbon",
-      "gélifié",
-      "crocodile"
-    ],
+    "tag": ["bonbon", "gélifié", "crocodile"],
     "ingredients": [
       "70 gr gélatine",
       "350 gr eau",
@@ -55,15 +43,10 @@
     "instruction": "Pour environ 270 bonbons"
   },
   {
-    "id": 1001,
+    "id": 1100,
     "categorie": "pâtisserie",
     "nom": "Castille (Biscuit Chocolat)",
-    "tag": [
-      "chocolat",
-      "biscuit",
-      "entremet",
-      "amande"
-    ],
+    "tag": ["chocolat", "biscuit", "entremet", "amande"],
     "ingredients": [
       "375g Jaunes d'œufs",
       "2g Blancs d'œufs",
@@ -81,12 +64,7 @@
     "id": 1002,
     "categorie": "pâtisserie",
     "nom": "Cheesecake américain",
-    "tag": [
-      "cheesecake",
-      "kiri",
-      "fraise",
-      "fromage"
-    ],
+    "tag": ["cheesecake", "kiri", "fraise", "fromage"],
     "ingredients": [
       "910g Kiri",
       "200g Sucre (150g + 50g)",
@@ -103,29 +81,15 @@
     "id": 1003,
     "categorie": "pâtisserie",
     "nom": "Crème Pâtissière (base 1L)",
-    "tag": [
-      "base",
-      "creme",
-      "vanille",
-      "garniture"
-    ],
-    "ingredients": [
-      "1L Lait",
-      "200g Sucre",
-      "80g Poudre à crème",
-      "2 oeufs"
-    ],
+    "tag": ["base", "creme", "vanille", "garniture"],
+    "ingredients": ["1L Lait", "200g Sucre", "80g Poudre à crème", "2 oeufs"],
     "instruction": "Porter le lait à ébullition. Mélanger œufs, sucre et poudre. Verser le lait, cuire jusqu'à épaississement."
   },
   {
     "id": 1004,
     "categorie": "pâtisserie",
     "nom": "Crémeux Framboise / Cassis",
-    "tag": [
-      "cremeux",
-      "fruit",
-      "insertion"
-    ],
+    "tag": ["cremeux", "fruit", "insertion"],
     "ingredients": [
       "1000g Purée de fruit",
       "360g Jaunes d'œufs",
@@ -139,12 +103,7 @@
     "id": 1005,
     "categorie": "pâtisserie",
     "nom": "Pâte Sablée Breton",
-    "tag": [
-      "pate",
-      "sable",
-      "breton",
-      "base"
-    ],
+    "tag": ["pate", "sable", "breton", "base"],
     "ingredients": [
       "1200g Beurre",
       "2300g Farine",
@@ -159,12 +118,7 @@
     "id": 4001,
     "categorie": "chocolaterie",
     "nom": "Ganache Citron (2 cadres)",
-    "tag": [
-      "chocolat",
-      "ganache",
-      "citron",
-      "bonbon"
-    ],
+    "tag": ["chocolat", "ganache", "citron", "bonbon"],
     "ingredients": [
       "250g Purée de citron",
       "550g Crème",
@@ -180,27 +134,15 @@
     "id": 4002,
     "categorie": "chocolaterie",
     "nom": "Praliné Nature",
-    "tag": [
-      "praline",
-      "noisette",
-      "chocolat"
-    ],
-    "ingredients": [
-      "2000g Praliné",
-      "800g Chocolat lait"
-    ],
+    "tag": ["praline", "noisette", "chocolat"],
+    "ingredients": ["2000g Praliné", "800g Chocolat lait"],
     "instruction": "Mélanger le praliné avec le chocolat au lait fondu. Couler en cadre."
   },
   {
     "id": 1006,
     "categorie": "pâtisserie",
     "nom": "Pâte Sucrée",
-    "tag": [
-      "pate",
-      "sucree",
-      "tartes",
-      "base"
-    ],
+    "tag": ["pate", "sucree", "tartes", "base"],
     "ingredients": [
       "1kg Beurre",
       "700g Sucre glace",
@@ -215,29 +157,15 @@
     "id": 1007,
     "categorie": "pâtisserie",
     "nom": "Génoise (Fraisier/Capitole)",
-    "tag": [
-      "genoise",
-      "biscuit",
-      "fraisier",
-      "entremet"
-    ],
-    "ingredients": [
-      "32 oeufs",
-      "1kg Sucre",
-      "1kg Farine"
-    ],
+    "tag": ["genoise", "biscuit", "fraisier", "entremet"],
+    "ingredients": ["32 oeufs", "1kg Sucre", "1kg Farine"],
     "instruction": "Chauffer les œufs et le sucre en mélangeant. Monter au batteur jusqu'à refroidissement. Incorporer délicatement la farine à la main. Cuisson 8 à 15 min à 220°C."
   },
   {
     "id": 1008,
     "categorie": "pâtisserie",
     "nom": "Mousse Vanille (Fraisier)",
-    "tag": [
-      "mousse",
-      "vanille",
-      "fraisier",
-      "creme"
-    ],
+    "tag": ["mousse", "vanille", "fraisier", "creme"],
     "ingredients": [
       "3L Lait",
       "120g Vanille",
@@ -253,12 +181,7 @@
     "id": 1009,
     "categorie": "pâtisserie",
     "nom": "Dacquoise (Succès)",
-    "tag": [
-      "dacquoise",
-      "biscuit",
-      "succes",
-      "amande"
-    ],
+    "tag": ["dacquoise", "biscuit", "succes", "amande"],
     "ingredients": [
       "140g Poudre d'amandes",
       "140g Sucre glace",
@@ -272,12 +195,7 @@
     "id": 1010,
     "categorie": "pâtisserie",
     "nom": "Baba au Rhum",
-    "tag": [
-      "baba",
-      "rhum",
-      "levure",
-      "sirop"
-    ],
+    "tag": ["baba", "rhum", "levure", "sirop"],
     "ingredients": [
       "440g Farine",
       "200g Beurre",
@@ -288,58 +206,12 @@
     ],
     "instruction": "Pétrir la farine, la levure, le sucre, le sel et les œufs. Incorporer le beurre ramolli en fin de pétrissage. Laisser pousser avant cuisson."
   },
-  {
-    "id": 4003,
-    "categorie": "chocolaterie",
-    "nom": "Ganache Passion",
-    "tag": [
-      "ganache",
-      "passion",
-      "fruit",
-      "chocolat"
-    ],
-    "ingredients": [
-      "250g Purée de passion",
-      "550g Crème",
-      "17g Sorbitol",
-      "50g Trimoline",
-      "1200g Couverture lait",
-      "500g Couverture noir",
-      "125g Beurre"
-    ],
-    "instruction": "Porter à ébullition la purée, la crème, le sorbitol et la trimoline. Verser sur les chocolats hachés. Créer l'émulsion et ajouter le beurre à la fin."
-  },
-  {
-    "id": 4004,
-    "categorie": "chocolaterie",
-    "nom": "Ganache Café",
-    "tag": [
-      "ganache",
-      "cafe",
-      "chocolat",
-      "noir"
-    ],
-    "ingredients": [
-      "925g Crème",
-      "160g Café soluble",
-      "20g Sorbitol",
-      "92g Trimoline",
-      "1175g Couverture lait",
-      "500g Couverture noir",
-      "125g Beurre"
-    ],
-    "instruction": "Infuser le café dans la crème chaude avec sorbitol et trimoline. Verser sur les couvertures, émulsionner et ajouter le beurre."
-  },
+
   {
     "id": 1011,
     "categorie": "pâtisserie",
     "nom": "Mousse chocolat au lait (Castille)",
-    "tag": [
-      "mousse",
-      "chocolat",
-      "lait",
-      "entremet"
-    ],
+    "tag": ["mousse", "chocolat", "lait", "entremet"],
     "ingredients": [
       "1125g Chocolat lait",
       "312.5g Jaunes d'œufs (15)",
@@ -353,12 +225,7 @@
     "id": 1012,
     "categorie": "pâtisserie",
     "nom": "Crème brûlée abricot",
-    "tag": [
-      "creme",
-      "brulee",
-      "abricot",
-      "insertion"
-    ],
+    "tag": ["creme", "brulee", "abricot", "insertion"],
     "ingredients": [
       "3L Crème",
       "6 gousses Vanille",
@@ -373,12 +240,7 @@
     "id": 1013,
     "categorie": "pâtisserie",
     "nom": "Mousseline",
-    "tag": [
-      "creme",
-      "mousseline",
-      "beurre",
-      "base"
-    ],
+    "tag": ["creme", "mousseline", "beurre", "base"],
     "ingredients": [
       "1L Lait",
       "200g Sucre",
@@ -392,12 +254,7 @@
     "id": 1014,
     "categorie": "pâtisserie",
     "nom": "Crème d'amandes",
-    "tag": [
-      "creme",
-      "amande",
-      "galette",
-      "base"
-    ],
+    "tag": ["creme", "amande", "galette", "base"],
     "ingredients": [
       "1kg Beurre",
       "1kg Sucre",
@@ -413,11 +270,7 @@
     "id": 1015,
     "categorie": "pâtisserie",
     "nom": "Crémeux Caramel",
-    "tag": [
-      "cremeux",
-      "caramel",
-      "mascarpone"
-    ],
+    "tag": ["cremeux", "caramel", "mascarpone"],
     "ingredients": [
       "1000g Crème",
       "70g Glucose",
@@ -433,12 +286,7 @@
     "id": 1016,
     "categorie": "pâtisserie",
     "nom": "Namélaka Chocolat noir",
-    "tag": [
-      "namelaka",
-      "chocolat",
-      "noir",
-      "onctueux"
-    ],
+    "tag": ["namelaka", "chocolat", "noir", "onctueux"],
     "ingredients": [
       "1000g Lait",
       "50g Glucose",
@@ -452,12 +300,7 @@
     "id": 1017,
     "categorie": "pâtisserie",
     "nom": "Pâte à choux",
-    "tag": [
-      "pate",
-      "choux",
-      "eclair",
-      "base"
-    ],
+    "tag": ["pate", "choux", "eclair", "base"],
     "ingredients": [
       "1L Eau",
       "20g Sel",
@@ -471,12 +314,7 @@
     "id": 1018,
     "categorie": "pâtisserie",
     "nom": "Biscuit Joconde",
-    "tag": [
-      "biscuit",
-      "joconde",
-      "amande",
-      "entremet"
-    ],
+    "tag": ["biscuit", "joconde", "amande", "entremet"],
     "ingredients": [
       "560g Poudre d'amandes",
       "560g Sucre glace",
@@ -489,15 +327,18 @@
     "instruction": "Monter amandes, glace, œufs et farine. Monter les blancs avec le sucre. Fondre le beurre et l'ajouter au premier mélange. Incorporer les blancs. Cuisson 8-9 min à 170-220°C[cite: 371, 372, 373, 374, 376, 377]."
   },
   {
+    "id": 1019,
+    "categorie": "patisserie",
+    "nom": "génoise",
+    "tag": ["patisserie", "biscuit"],
+    "ingredients": ["1kg sucre", "1kg farine", "32 oeufs"],
+    "instruction": "cuire à 180°C"
+  },
+  {
     "id": 4005,
     "categorie": "chocolaterie",
     "nom": "Ganache Menthe",
-    "tag": [
-      "ganache",
-      "menthe",
-      "chocolat",
-      "bonbon"
-    ],
+    "tag": ["ganache", "menthe", "chocolat", "bonbon"],
     "ingredients": [
       "650g Crème",
       "20g Sorbitol",
@@ -514,26 +355,15 @@
     "id": 4006,
     "categorie": "chocolaterie",
     "nom": "Gianduja",
-    "tag": [
-      "gianduja",
-      "noisette",
-      "chocolat"
-    ],
-    "ingredients": [
-      "1600g Praliné",
-      "1700g Gianduja"
-    ],
+    "tag": ["gianduja", "noisette", "chocolat"],
+    "ingredients": ["1600g Praliné", "1700g Gianduja"],
     "instruction": "Mélanger les deux masses ensemble pour obtenir un intérieur de bonbon ou une base de fourrage[cite: 479]."
   },
   {
     "id": 2001,
     "categorie": "confiserie",
     "nom": "banane",
-    "tag": [
-      "bonbon",
-      "banane",
-      "guimauve"
-    ],
+    "tag": ["bonbon", "banane", "guimauve"],
     "ingredients": [
       "27 gr gélatine",
       "60 gr eau",
@@ -549,11 +379,7 @@
     "id": 2003,
     "categorie": "confiserie",
     "nom": "tagada",
-    "tag": [
-      "bonbon",
-      "fraise",
-      "tagada"
-    ],
+    "tag": ["bonbon", "fraise", "tagada"],
     "ingredients": [
       "14 gr gélatine",
       "30 gr eau",
@@ -565,166 +391,12 @@
     ],
     "instruction": "Pour environ 60 bonbons"
   },
-  {
-    "id": 4020,
-    "categorie": "chocolaterie",
-    "nom": "Ganache fève de tonka",
-    "tag": [
-      "ganache",
-      "chocolat",
-      "tonka"
-    ],
-    "ingredients": [
-      "500g Crème",
-      "40g Trimoline",
-      "40g Sorbitol",
-      "40g Glucose",
-      "480g Chocolat noir 55%",
-      "290g Chocolat lait",
-      "85g Beurre plaque",
-      "2 Fèves de tonka"
-    ],
-    "instruction": "Infuser les fèves de tonka dans la crème. Chauffer avec les sucres (trimoline, sorbitol, glucose). Verser sur les chocolats et mélanger pour créer l'émulsion. Ajouter le beurre plaque."
-  },
-  {
-    "id": 4021,
-    "categorie": "chocolaterie",
-    "nom": "Ganache Caramel (Cadrée)",
-    "tag": [
-      "ganache",
-      "caramel",
-      "chocolat"
-    ],
-    "ingredients": [
-      "215g Sucre (pour caramel)",
-      "269g Crème (pour décuire)",
-      "400g Crème caramel",
-      "22g Sorbitol",
-      "54g Trimoline",
-      "646g Chocolat lait",
-      "538g Chocolat noir 55%",
-      "646g Chocolat lacté caramel",
-      "135g Beurre plaque"
-    ],
-    "instruction": "Réaliser un caramel à sec avec le sucre, décuire avec la première partie de crème. Ajouter le reste des ingrédients, émulsionner avec les chocolats et finir par le beurre."
-  },
-  {
-    "id": 4022,
-    "categorie": "chocolaterie",
-    "nom": "Ganache Bergamote",
-    "tag": [
-      "ganache",
-      "bergamote",
-      "fruit"
-    ],
-    "ingredients": [
-      "208g Purée bergamote",
-      "67g Sorbitol",
-      "54g Trimoline",
-      "54g Glucose",
-      "613g Chocolat lait",
-      "308g Chocolat noir 55%",
-      "145g Beurre plaque"
-    ],
-    "instruction": "Chauffer la purée avec les sucres. Verser sur les couvertures lait et noir. Incorporer le beurre plaque et mixer."
-  },
-  {
-    "id": 4023,
-    "categorie": "chocolaterie",
-    "nom": "Ganache Citron vert / Vanille / Passion",
-    "tag": [
-      "ganache",
-      "citron vert",
-      "passion",
-      "vanille"
-    ],
-    "ingredients": [
-      "125g Purée citron vert",
-      "83g Purée passion",
-      "67g Sorbitol",
-      "54g Trimoline",
-      "54g Glucose",
-      "613g Chocolat lait",
-      "308g Chocolat noir 55%",
-      "145g Beurre plaque"
-    ],
-    "instruction": "Mélanger les purées de fruits et les sucres, chauffer et réaliser l'émulsion sur les chocolats. Ajouter le beurre."
-  },
-  {
-    "id": 4024,
-    "categorie": "chocolaterie",
-    "nom": "Praliné Nature",
-    "tag": [
-      "praliné",
-      "base",
-      "noisette"
-    ],
-    "ingredients": [
-      "1000g Praliné",
-      "400g Chocolat lait"
-    ],
-    "instruction": "Mélanger le praliné avec le chocolat lait fondu (mise au point) pour couler en cadre."
-  },
-  {
-    "id": 4025,
-    "categorie": "chocolaterie",
-    "nom": "Praliné Feuilleté",
-    "tag": [
-      "praliné",
-      "feuilletine",
-      "croustillant"
-    ],
-    "ingredients": [
-      "940g Praliné",
-      "360g Chocolat lait",
-      "150g Feuilletine"
-    ],
-    "instruction": "Mélanger le praliné et le chocolat lait, puis incorporer délicatement la feuilletine pour garder le croustillant."
-  },
-  {
-    "id": 4026,
-    "categorie": "chocolaterie",
-    "nom": "Gianduja Cacahuète",
-    "tag": [
-      "gianduja",
-      "cacahuète"
-    ],
-    "ingredients": [
-      "815g Cacahuète",
-      "272g Sucre glace",
-      "363g Chocolat Zephyr (Blanc)"
-    ],
-    "instruction": "Broyer les cacahuètes avec le sucre glace jusqu'à obtention d'une pâte, puis mélanger avec le chocolat Zephyr fondu."
-  },
-  {
-    "id": 4027,
-    "categorie": "chocolaterie",
-    "nom": "Bonbon Fruit Rouge (Thé)",
-    "tag": [
-      "bonbon",
-      "moulé",
-      "thé",
-      "fruit rouge"
-    ],
-    "ingredients": [
-      "110g Crème",
-      "12g Trimoline",
-      "4g Sorbitol",
-      "37g Chocolat noir 55%",
-      "44g Chocolat lait",
-      "10g Thé fruit rouge"
-    ],
-    "instruction": "Infuser le thé dans la crème chaude. Ajouter les sucres, verser sur les chocolats pour la ganache de fourrage."
-  },
+
   {
     "id": 2001,
     "categorie": "confiserie",
     "nom": "Bonbon gélifié",
-    "tag": [
-      "gélifié",
-      "bonbon",
-      "gélatine"
-    ],
+    "tag": ["gélifié", "bonbon", "gélatine"],
     "ingredients": [
       "25g Gélatine",
       "125g Eau d'hydratation",
@@ -745,12 +417,7 @@
     "id": 2002,
     "categorie": "confiserie",
     "nom": "Caramel mou aux fruits",
-    "tag": [
-      "caramel",
-      "mou",
-      "fruit",
-      "framboise"
-    ],
+    "tag": ["caramel", "mou", "fruit", "framboise"],
     "ingredients": [
       "225g Crème",
       "225g Purée de framboise",
@@ -765,11 +432,7 @@
     "id": 2003,
     "categorie": "confiserie",
     "nom": "Caramel mou au chocolat",
-    "tag": [
-      "caramel",
-      "chocolat",
-      "noir"
-    ],
+    "tag": ["caramel", "chocolat", "noir"],
     "ingredients": [
       "30g Glucose DE 38",
       "500g Sucre",
@@ -786,11 +449,7 @@
     "id": 2004,
     "categorie": "confiserie",
     "nom": "Pâte de fruit Poire",
-    "tag": [
-      "pâte de fruit",
-      "poire",
-      "pectine"
-    ],
+    "tag": ["pâte de fruit", "poire", "pectine"],
     "ingredients": [
       "320g Purée de poire",
       "80g Jus de pomme",
@@ -803,15 +462,32 @@
     ],
     "instruction": "Chauffer les purées. Ajouter le mélange sucre/pectine. Porter à ébullition, ajouter le reste du sucre et le glucose. Cuire à 106-107°C. Ajouter l'eau de vie et la solution acide avant de couler."
   },
+
+  {
+    "id": 3000,
+    "categorie": "viennoiserie",
+    "nom": "Pâte levée feuilletée",
+    "tag": ["croissant", "viennoiserie", "pain au chocolat"],
+    "ingredients": [
+      "farine t65 :500 gr",
+      "farine de gruau : 500rg",
+      "levure : 40 gr",
+      "sucre:130 gr",
+      "oeufs:50 gr",
+      "lait : 100 gr",
+      "eau: 300 gr",
+      "sel: 20 gr",
+      "améliorant ; 10 gr",
+      "beurre : 100 gr",
+      "beurre tourrage: 600 gr"
+    ],
+    "instruction": "pétrir 5 min en 1ère et 3 min en  2ème\n2 tours double "
+  },
   {
     "id": 4030,
     "categorie": "chocolaterie",
     "nom": "Pâte d'amande 33%",
-    "tag": [
-      "pâte d'amande",
-      "amande",
-      "base"
-    ],
+    "tag": ["pâte d'amande", "amande", "base"],
     "ingredients": [
       "125g Amande brut",
       "50g Eau",
@@ -826,29 +502,151 @@
     "id": 4031,
     "categorie": "chocolaterie",
     "nom": "Praliné noisette",
-    "tag": [
-      "praliné",
-      "noisette"
-    ],
-    "ingredients": [
-      "500g Noisettes",
-      "350g Sucre",
-      "100g Eau"
-    ],
+    "tag": ["praliné", "noisette"],
+    "ingredients": ["500g Noisettes", "350g Sucre", "100g Eau"],
     "instruction": "Torréfier les noisettes. Réaliser un sucre cuit avec l'eau et le sucre, ajouter les noisettes pour les sabler puis les caraméliser. Laisser refroidir et broyer."
   },
   {
-    "id": 1019,
-    "categorie": "patisserie",
-    "nom": "génoise",
-    "tag": [
-      "patisserie"
-    ],
+    "id": 4003,
+    "categorie": "chocolaterie",
+    "nom": "Ganache Passion",
+    "tag": ["ganache", "passion", "fruit", "chocolat"],
     "ingredients": [
-      "1kg sucre",
-      "1kg farine",
-      "32 oeufs"
+      "250g Purée de passion",
+      "550g Crème",
+      "17g Sorbitol",
+      "50g Trimoline",
+      "1200g Couverture lait",
+      "500g Couverture noir",
+      "125g Beurre"
     ],
-    "instruction": "cuire à 180°C"
+    "instruction": "Porter à ébullition la purée, la crème, le sorbitol et la trimoline. Verser sur les chocolats hachés. Créer l'émulsion et ajouter le beurre à la fin."
+  },
+  {
+    "id": 4004,
+    "categorie": "chocolaterie",
+    "nom": "Ganache Café",
+    "tag": ["ganache", "cafe", "chocolat", "noir"],
+    "ingredients": [
+      "925g Crème",
+      "160g Café soluble",
+      "20g Sorbitol",
+      "92g Trimoline",
+      "1175g Couverture lait",
+      "500g Couverture noir",
+      "125g Beurre"
+    ],
+    "instruction": "Infuser le café dans la crème chaude avec sorbitol et trimoline. Verser sur les couvertures, émulsionner et ajouter le beurre."
+  },
+  {
+    "id": 4020,
+    "categorie": "chocolaterie",
+    "nom": "Ganache fève de tonka",
+    "tag": ["ganache", "chocolat", "tonka"],
+    "ingredients": [
+      "500g Crème",
+      "40g Trimoline",
+      "40g Sorbitol",
+      "40g Glucose",
+      "480g Chocolat noir 55%",
+      "290g Chocolat lait",
+      "85g Beurre plaque",
+      "2 Fèves de tonka"
+    ],
+    "instruction": "Infuser les fèves de tonka dans la crème. Chauffer avec les sucres (trimoline, sorbitol, glucose). Verser sur les chocolats et mélanger pour créer l'émulsion. Ajouter le beurre plaque."
+  },
+  {
+    "id": 4021,
+    "categorie": "chocolaterie",
+    "nom": "Ganache Caramel (Cadrée)",
+    "tag": ["ganache", "caramel", "chocolat"],
+    "ingredients": [
+      "215g Sucre (pour caramel)",
+      "269g Crème (pour décuire)",
+      "400g Crème caramel",
+      "22g Sorbitol",
+      "54g Trimoline",
+      "646g Chocolat lait",
+      "538g Chocolat noir 55%",
+      "646g Chocolat lacté caramel",
+      "135g Beurre plaque"
+    ],
+    "instruction": "Réaliser un caramel à sec avec le sucre, décuire avec la première partie de crème. Ajouter le reste des ingrédients, émulsionner avec les chocolats et finir par le beurre."
+  },
+  {
+    "id": 4022,
+    "categorie": "chocolaterie",
+    "nom": "Ganache Bergamote",
+    "tag": ["ganache", "bergamote", "fruit"],
+    "ingredients": [
+      "208g Purée bergamote",
+      "67g Sorbitol",
+      "54g Trimoline",
+      "54g Glucose",
+      "613g Chocolat lait",
+      "308g Chocolat noir 55%",
+      "145g Beurre plaque"
+    ],
+    "instruction": "Chauffer la purée avec les sucres. Verser sur les couvertures lait et noir. Incorporer le beurre plaque et mixer."
+  },
+  {
+    "id": 4023,
+    "categorie": "chocolaterie",
+    "nom": "Ganache Citron vert / Vanille / Passion",
+    "tag": ["ganache", "citron vert", "passion", "vanille"],
+    "ingredients": [
+      "125g Purée citron vert",
+      "83g Purée passion",
+      "67g Sorbitol",
+      "54g Trimoline",
+      "54g Glucose",
+      "613g Chocolat lait",
+      "308g Chocolat noir 55%",
+      "145g Beurre plaque"
+    ],
+    "instruction": "Mélanger les purées de fruits et les sucres, chauffer et réaliser l'émulsion sur les chocolats. Ajouter le beurre."
+  },
+  {
+    "id": 4024,
+    "categorie": "chocolaterie",
+    "nom": "Praliné Nature",
+    "tag": ["praliné", "base", "noisette"],
+    "ingredients": ["1000g Praliné", "400g Chocolat lait"],
+    "instruction": "Mélanger le praliné avec le chocolat lait fondu (mise au point) pour couler en cadre."
+  },
+  {
+    "id": 4025,
+    "categorie": "chocolaterie",
+    "nom": "Praliné Feuilleté",
+    "tag": ["praliné", "feuilletine", "croustillant"],
+    "ingredients": ["940g Praliné", "360g Chocolat lait", "150g Feuilletine"],
+    "instruction": "Mélanger le praliné et le chocolat lait, puis incorporer délicatement la feuilletine pour garder le croustillant."
+  },
+  {
+    "id": 4026,
+    "categorie": "chocolaterie",
+    "nom": "Gianduja Cacahuète",
+    "tag": ["gianduja", "cacahuète"],
+    "ingredients": [
+      "815g Cacahuète",
+      "272g Sucre glace",
+      "363g Chocolat Zephyr (Blanc)"
+    ],
+    "instruction": "Broyer les cacahuètes avec le sucre glace jusqu'à obtention d'une pâte, puis mélanger avec le chocolat Zephyr fondu."
+  },
+  {
+    "id": 4027,
+    "categorie": "chocolaterie",
+    "nom": "Bonbon Fruit Rouge (Thé)",
+    "tag": ["bonbon", "moulé", "thé", "fruit rouge"],
+    "ingredients": [
+      "110g Crème",
+      "12g Trimoline",
+      "4g Sorbitol",
+      "37g Chocolat noir 55%",
+      "44g Chocolat lait",
+      "10g Thé fruit rouge"
+    ],
+    "instruction": "Infuser le thé dans la crème chaude. Ajouter les sucres, verser sur les chocolats pour la ganache de fourrage."
   }
 ]

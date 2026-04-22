@@ -15,190 +15,126 @@ fetch("http://localhost:3000/recettes")
   .then((data) => {
     toutesLesRecettes = data;
     afficherRecettes(toutesLesRecettes);
-  });
+  })
+  .catch((err) => console.error("Erreur chargement:", err));
 
-// 2. Événement de recherche
+// 2. Recherche
 barreRecherche.addEventListener("input", (e) => {
   const saisie = e.target.value.toLowerCase();
 
-  // On cache/affiche les catégories proprement
-  menuCategories.style.display = saisie.length > 0 ? "none" : "grid";
+  if (saisie.length > 0) {
+    menuCategories.style.display = "none";
+  } else {
+    menuCategories.style.display = "";
+  }
 
   const filtre = toutesLesRecettes.filter((recette) =>
     recette.nom.toLowerCase().includes(saisie),
   );
   afficherRecettes(filtre);
 });
-
-// 3. Clic sur les catégories
+// 3. Clic sur les catégories (Version unifiée)
 itemsCategories.forEach((item) => {
   item.addEventListener("click", () => {
     const catNom = item.textContent.trim().toLowerCase();
+
     const filtre = toutesLesRecettes.filter((recette) => {
-      if (recette.categorie) {
-        return recette.categorie.toLowerCase() === catNom;
-      }
-      return false;
+      // On compare sans accent pour être sûr
+      const catRecette = recette.categorie
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+      const catCible = catNom.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      return catRecette === catCible;
     });
 
-    afficherRecettes(filtre);
-
-    barreRecherche.value = ""; // On vide la barre
-    menuCategories.style.display = "grid"; // On garde le menu
+    barreRecherche.value = "";
+    menuCategories.style.display = "";
     afficherRecettes(filtre);
     listeElement.scrollIntoView({ behavior: "smooth" });
   });
 });
 
-// 4. Fonction pour afficher les recettes
 function afficherRecettes(recettes) {
   listeElement.innerHTML = "";
-
   recettes.forEach((recette) => {
-    // Sécurité orthographe JSON
     const ingredientsArr = recette.ingredients || recette.ingredient || [];
-
-    // Création de l'élément div proprement
     const card = document.createElement("div");
     card.className = "recette-card";
     card.innerHTML = `
         <h3>${recette.nom}</h3>
-        <p>${ingredientsArr.slice(0, 3).join(",")}...</p> 
+        <p>${ingredientsArr.slice(0, 3).join(", ")}...</p> 
         <p><em>Cliquez pour voir la suite</em></p>
     `;
-
-    // --- LA RÉPONSE À TON PROBLÈME ---
-    // On ajoute l'événement directement sur la card qu'on vient de créer
-    card.addEventListener("click", () => {
-      ouvrirModale(recette);
-    });
-
+    card.addEventListener("click", () => ouvrirModale(recette));
     listeElement.appendChild(card);
   });
 }
 
-// 5. Ouverture de la modale
 function ouvrirModale(recette) {
   const lesIngredients = recette.ingredients || recette.ingredient || [];
 
   modalDetails.innerHTML = `
-      <h2 >${recette.nom}</h2>
-      <p><strong>Catégorie :</strong> ${recette.categorie}</p>
+      <h2 style="text-align: center;">${recette.nom}</h2>
+      <p style="text-align: center;"><strong>Catégorie :</strong> ${recette.categorie}</p>
       <hr>
       <h3>Ingrédients :</h3>
-      <ul style="list-style: none;padding-left:200px; display : block;line-height:2px;">
-          ${lesIngredients
-            .map(
-              (ing) =>
-                `<li style="font-size : 1.5rem;width:100%; text-align:left;padding:20px; margin-bottom: 5px;">${ing}</li>`,
-            )
-            .join("")}
-      </ul>
+      <div class="container-liste">
+        <ul class="ma-liste-rectte">
+            ${lesIngredients.map((ing) => `<li>${ing}</li>`).join("")}
+        </ul>
+      </div>
       <hr>
       <h3>Instructions :</h3>
-      <p>${recette.instruction}</p>
+      <p class="instruction-texte">${recette.instruction}</p>
   `;
   modal.style.display = "block";
 }
-
-// 6. Fermeture de la modale
-closeModalBtn.addEventListener("click", () => (modal.style.display = "none"));
-window.addEventListener("click", (e) => {
+// Gestion des modales (Fermeture)
+closeModalBtn.onclick = () => (modal.style.display = "none");
+window.onclick = (e) => {
   if (e.target === modal) modal.style.display = "none";
-});
-//----------------------------------------------------------------------------------
-
-itemsCategories.forEach((item) => {
-  item.addEventListener("click", () => {
-    const catNom = item.textContent.trim().toLowerCase();
-
-    const tranches = {
-      boulangerie: { min: 0, max: 999 },
-      pâtisserie: { min: 1000, max: 1999 },
-      confiserie: { min: 2000, max: 2999 },
-      viennoiserie: { min: 3000, max: 3999 },
-      chocolaterie: { min: 4000, max: 4500 },
-      glacerie: { min: 5000, max: 5999 },
-    };
-
-    const limite = tranches[catNom];
-
-    const filtre = toutesLesRecettes.filter((recette) => {
-      if (limite) {
-        return recette.id >= limite.min && recette.id <= limite.max;
-      }
-      return false;
-    });
-
-    afficherRecettes(filtre);
-
-    barreRecherche.value = "";
-    menuCategories.style.display = "grid";
-    listeElement.scrollIntoView({ behavior: "smooth" });
-  });
-});
-
-//-------------------------------------------------------------------------------------------
-const modals = document.getElementById("recipeModal");
-const btn = document.getElementById("addRecipeBtn");
-const span = document.getElementsByClassName("close")[0];
-
-// Ouvrir la fenêtre au clic
-btn.onclick = function () {
-  modals.style.display = "block";
+  if (e.target === document.getElementById("recipeModal"))
+    document.getElementById("recipeModal").style.display = "none";
 };
 
-// Fermer au clic sur le X
-span.onclick = function () {
-  modals.style.display = "none";
-};
-
-// Fermer si on clique en dehors de la fenêtre
-window.onclick = function (event) {
-  if (event.target == modals) {
-    modals.style.display = "none";
-  }
-};
-
-//------------------------------------------------------------------------------------------------
-// --- GESTION DE L'AJOUT DE RECETTE ---
+// --- AJOUT DE RECETTE ---
+const modalAjout = document.getElementById("recipeModal");
+const btnAjout = document.getElementById("addRecipeBtn");
+const closeAjout = document.querySelector(".close");
 const recipeForm = document.getElementById("recipeForm");
 
-recipeForm.addEventListener("submit", (e) => {
-  e.preventDefault(); // Empêche le rechargement de la page
+btnAjout.onclick = () => (modalAjout.style.display = "block");
+closeAjout.onclick = () => (modalAjout.style.display = "none");
 
-  // 1. Récupérer les valeurs
+recipeForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
   const nom = document.getElementById("recipeName").value;
   const cat = document.getElementById("categorie").value;
   const ingredientsBruts = document.getElementById("recipeIngredient").value;
   const instruction = document.getElementById("recipeInstruction").value;
 
   if (!nom || !instruction) {
-    alert("Veuillez remplir au moins le nom et les instructions.");
+    alert("Veuillez remplir le nom et les instructions.");
     return;
   }
 
-  // 2. Transformer le texte des ingrédients en tableau
-  // On sépare par ligne ou par virgule
   const ingredientsArray = ingredientsBruts
     .split(/[,\n]/)
-    .map((ing) => ing.trim())
-    .filter((ing) => ing !== "");
-
-  // 3. Générer l'ID automatique selon tes tranches
+    .map((i) => i.trim())
+    .filter((i) => i !== "");
   const nouvelId = genererProchainID(cat);
 
-  // 4. Créer l'objet recette
   const nouvelleRecette = {
     id: nouvelId,
     categorie: cat,
     nom: nom,
-    tag: [cat], // Tag par défaut
+    tag: [cat],
     ingredients: ingredientsArray,
     instruction: instruction,
   };
 
-  // Remplace ton ancienne logique d'enregistrement par celle-ci :
   fetch("http://localhost:3000/ajouter-recette", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -206,42 +142,27 @@ recipeForm.addEventListener("submit", (e) => {
   })
     .then((res) => res.json())
     .then((response) => {
-      alert(response.message);
-      location.reload(); // Recharge la page pour voir la nouvelle liste
+      alert("Recette ajoutée !");
+      location.reload();
     });
-
-  // On ferme la modale
-  modals.style.display = "none";
-  recipeForm.reset();
-
-  // On affiche la catégorie pour voir notre nouvelle recette
-  const filtre = toutesLesRecettes.filter((r) => r.id === nouvelId);
-  afficherRecettes(filtre);
-
-  alert(`Recette ajoutée avec succès ! ID attribué : ${nouvelId}`);
-  console.log("Fichier JSON virtuel mis à jour :", toutesLesRecettes);
 });
 
-// Fonction pour calculer l'ID selon tes tranches existantes
 function genererProchainID(categorie) {
   const tranches = {
     boulangerie: 0,
-    patisserie: 1000,
+    pâtisserie: 1000,
     confiserie: 2000,
     viennoiserie: 3000,
     chocolaterie: 4000,
     glacerie: 5000,
   };
 
-  const min = tranches[categorie] || 9000;
+  const min = tranches[categorie] !== undefined ? tranches[categorie] : 9000;
   const max = min + 999;
 
-  // Trouver les IDs de cette catégorie
   const idsExistants = toutesLesRecettes
     .filter((r) => r.id >= min && r.id <= max)
     .map((r) => r.id);
 
-  if (idsExistants.length === 0) return min;
-
-  return Math.max(...idsExistants) + 1;
+  return idsExistants.length === 0 ? min : Math.max(...idsExistants) + 1;
 }

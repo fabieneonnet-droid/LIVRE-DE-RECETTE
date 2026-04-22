@@ -79,6 +79,7 @@ h3{
     padding: 20px;
     z-index: 10; 
     position: relative; 
+    display: inline-flex;
 }
 
 .recipe-card {
@@ -88,13 +89,13 @@ h3{
 }
 ul{
     list-style: none;
-    display: inline-flex;
     
     margin: 0;
 }
 li{
     padding: 25px;
     font-size: 2rem;
+    
 }
 p{
     color: #4e4d4db4;
@@ -174,6 +175,7 @@ input,label,select,textarea{
 }
 
 
+
 .modal-content {
     background-color: #fefefe;
     margin: 10% auto; 
@@ -182,7 +184,7 @@ input,label,select,textarea{
     width: 80%; 
     max-width: 600px; 
     position: relative;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: -4px 4px 10px #faa330;
 }
 
 
@@ -235,12 +237,14 @@ input,label,select,textarea{
 .modal-content {
     
     position: relative;
-  
     background-color: #f5f1e8; 
     width: 100%;
     padding: 30px;
     border-radius: 20px 20px 0 0;
     animation: slideUp 0.5s ease-out;
+}
+.modalDetails ul li{
+    display: block;
 }
 
 @keyframes slideUp {
@@ -262,3 +266,30 @@ button:hover{
     font-size: 2.1rem;
     
 }
+/* On crée un container pour centrer la liste elle-même, mais garder le texte à gauche */
+.container-liste {
+    display: flex;
+    justify-content: center; /* Centre la liste dans la modale */
+    text-align: left;       /* Aligne le texte des ingrédients à gauche */
+    margin: 20px 0;
+}
+
+.ma-liste-rectte {
+    display: block !important;
+    list-style-type: disc !important; /* Force les points */
+    padding-left: 20px !important;
+    margin: 0;
+}
+
+.ma-liste-rectte li {
+    display: list-item !important; /* INDISPENSABLE pour voir la puce */
+    margin-bottom: 8px;
+    font-family: Arial, sans-serif;
+}
+
+.instruction-texte {
+    text-align: justify;
+    padding: 0 20px;
+    line-height: 1.6;
+}
+
