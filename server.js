@@ -1,38 +1,39 @@
 const express = require("express");
-const fs = require("fs");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const { createClient } = require("@supabase/supabase-js");
 
 const app = express();
 const PORT = 3000;
 
+// --- CONFIGURATION SUPABASE ---
+const supabaseUrl = "https://nyyrwsnzqvxcbbevfymo";
+const supabaseKey = "sb_publishable_oG4jPZy_5eyd9PfznFCqwg_9XwUWxWt";
+const supabase = createClient(supabaseUrl, supabaseKey);
+
 app.use(cors());
 app.use(bodyParser.json());
 
-// Route pour lire les recettes
-app.get("/recettes", (req, res) => {
-  fs.readFile("recettes.json", "utf8", (err, data) => {
-    if (err) return res.status(500).send(err);
-    res.send(JSON.parse(data));
-  });
+// 1. Route pour lire les recettes depuis Supabase
+app.get("/recettes", async (req, res) => {
+  const { data, error } = await supabase.from("recettes").select("*");
+
+  if (error) return res.status(500).json(error);
+  res.send(data);
 });
 
-// Route pour ajouter une recette et SAUVEGARDER dans le fichier
-app.post("/ajouter-recette", (req, res) => {
-  fs.readFile("recettes.json", "utf8", (err, data) => {
-    if (err) return res.status(500).send(err);
+// 2. Route pour ajouter une recette sur Supabase
+app.post("/ajouter-recette", async (req, res) => {
+  const nouvelleRecette = req.body;
 
-    const recettes = JSON.parse(data);
-    const nouvelleRecette = req.body;
-    recettes.push(nouvelleRecette);
+  const { data, error } = await supabase
+    .from("recettes")
+    .insert([nouvelleRecette]);
 
-    fs.writeFile("recettes.json", JSON.stringify(recettes, null, 2), (err) => {
-      if (err) return res.status(500).send(err);
-      res.send({ message: "Recette enregistrée sur le disque !" });
-    });
-  });
+  if (error) return res.status(500).json(error);
+  res.send({ message: "Recette enregistrée dans le Cloud !", data });
 });
 
 app.listen(PORT, () => {
-  console.log(`Serveur lancé sur http://localhost:${PORT}`);
+  console.log(`Serveur démarré sur http://localhost:${PORT}`);
 });

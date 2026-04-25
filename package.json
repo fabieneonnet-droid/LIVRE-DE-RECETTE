@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/fabieneonnet-droid/LIVRE-DE-RECETTE#readme",
   "dependencies": {
+    "@supabase/supabase-js": "^2.104.1",
     "body-parser": "^2.2.2",
     "cors": "^2.8.6",
     "express": "^5.2.1"
