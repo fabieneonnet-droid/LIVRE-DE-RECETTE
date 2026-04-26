@@ -1,0 +1,321 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #d4a574 0%, #8b6f47 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1000px;
+    }
+
+    /* État fermé - le livre */
+    .book-closed {
+      width: 800px;
+      height: 1000px;
+      background: linear-gradient(90deg, #2c1810 0%, #8b5a3c 50%, #a0622d 100%);
+      border-radius: 10px;
+      box-shadow: 
+        -15px 15px 35px rgba(0, 0, 0, 0.7),
+        inset -2px 0 5px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 1s ease;
+      position: relative;
+      transform-style: preserve-3d;
+    }
+
+    .book-closed:hover {
+      transform: translateY(-20px);
+      box-shadow: 
+        -20px 25px 45px rgba(0, 0, 0, 0.8),
+        inset -2px 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .book-closed::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, transparent 50%);
+      border-radius: 10px;
+    }
+
+    .book-title {
+      position: relative;
+      z-index: 10;
+      color: #f4e4c1;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .book-title h1 {
+      font-size: 4rem;
+      margin-bottom: 10px;
+      font-weight: normal;
+      letter-spacing: 2px;
+    }
+
+    .book-title p {
+      font-size: 2.5rem;
+      color: #d4a574;
+      font-style: italic;
+    }
+
+    .book-icon {
+      line-height: 0;
+      position: relative;
+      display: inline-block;
+      
+    }
+    .book-icon ::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow:  inset 0 0 30px 20px white;
+        border-radius: 15px;
+    }
+    
+    .book-icon img{
+       max-width: 600px;
+       margin-top: 120px;
+    border-radius: 15px; 
+    }
+
+    .click-hint {
+      position: relative;
+      z-index: 10;
+      font-size: 2rem;
+      color: #c9985e;
+      margin-top: 120px;
+      animation: pulse 2s infinite;
+      
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    /* État ouvert - le formulaire */
+    .book-open {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: linear-gradient(135deg, #d4a574 0%, #8b6f47 100%);
+      padding: 40px 20px;
+      animation: slideIn 0.8s ease;
+      overflow-y: auto;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .book-open.active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 750px;
+      background: #f4e4c1;
+      padding: 50px;
+      border-radius: 15px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: formAppear 0.8s ease 0.3s both;
+    }
+
+    @keyframes formAppear {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .form-container h2 {
+      color: #8b5a3c;
+      font: size 2rem;;
+      margin-bottom: 10px;
+      text-align: center;
+      font-weight: normal;
+    }
+
+    .form-subtitle {
+      color: #6b5344;
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      color: #2c1810;
+      font-size: 2rem;
+      margin-bottom: 8px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    input[type="email"],
+    input[type="text"],
+    input[type= "password"] {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #d4a574;
+      border-radius: 8px;
+      font-family: 'Georgia', serif;
+      font-size: 2rem;
+      color: #2c1810;
+      transition: all 0.3s ease;
+      background-color: #fefdfb;
+    }
+
+    input[type="email"]:focus,
+    input[type="text"]:focus,
+    input[type= "password"]:focus {
+      outline: none;
+      border-color: #8b5a3c;
+      box-shadow: 0 0 0 3px rgba(139, 90, 60, 0.1);
+      background-color: white;
+    }
+
+    input::placeholder {
+      color: #a0845e;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      margin-top: 25px;
+      background: linear-gradient(135deg, #8b5a3c 0%, #a0622d 100%);
+      color: #f4e4c1;
+      border: none;
+      border-radius: 8px;
+      font-size: 2rem;
+      font-weight: 600;
+      font-family: 'Georgia', serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(139, 90, 60, 0.3);
+    }
+
+    .submit-btn:active {
+      transform: translateY(-1px);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 30px;
+      left: 0px;
+      background: rgba(44, 24, 16, 0.8);
+      color: #f4e4c1;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 3rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .close-btn:hover {
+      background: rgba(44, 24, 16, 1);
+    }
+
+    .success-message {
+      display: none;
+      color: #4a7c3d;
+      background: #e8f5e9;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 20px;
+      border-left: 4px solid #4a7c3d;
+      animation: slideUp 0.5s ease;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .book-closed {
+        width: 350px;
+        height: 40px;
+      }
+
+      .book-title h1 {
+        font-size: 24px;
+      }
+
+      .form-container {
+        padding: 30px;
+        margin: 20px;
+      }
+
+      .book-icon {
+        font-size: 48px;
+      }
+    }

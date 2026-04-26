@@ -27,22 +27,6 @@
     "instruction": "bien pasteuriser"
   },
   {
-    "id": 2000,
-    "categorie": "confiserie",
-    "nom": "crocodile gélifié",
-    "tag": ["bonbon", "gélifié", "crocodile"],
-    "ingredients": [
-      "70 gr gélatine",
-      "350 gr eau",
-      "515 gr sucre",
-      "423 gr glucose",
-      "135 gr eau",
-      "29 ml solution acide",
-      "9 ml arôme"
-    ],
-    "instruction": "Pour environ 270 bonbons"
-  },
-  {
     "id": 1100,
     "categorie": "pâtisserie",
     "nom": "Castille (Biscuit Chocolat)",
@@ -113,30 +97,6 @@
       "7 oeufs"
     ],
     "instruction": "Sabler la farine et le beurre à la feuille. Ajouter les poudres puis les œufs. Pétrir 2 min."
-  },
-  {
-    "id": 4001,
-    "categorie": "chocolaterie",
-    "nom": "Ganache Citron (2 cadres)",
-    "tag": ["chocolat", "ganache", "citron", "bonbon"],
-    "ingredients": [
-      "250g Purée de citron",
-      "550g Crème",
-      "17g Sorbitol",
-      "50g Trimoline",
-      "1200g Couverture lait",
-      "500g Couverture noir",
-      "125g Beurre"
-    ],
-    "instruction": "Chauffer purée, crème, sorbitol et trimoline. Verser sur les couvertures. Incorporer le beurre à température."
-  },
-  {
-    "id": 4002,
-    "categorie": "chocolaterie",
-    "nom": "Praliné Nature",
-    "tag": ["praline", "noisette", "chocolat"],
-    "ingredients": ["2000g Praliné", "800g Chocolat lait"],
-    "instruction": "Mélanger le praliné avec le chocolat au lait fondu. Couler en cadre."
   },
   {
     "id": 1006,
@@ -219,7 +179,7 @@
       "13g Eau",
       "2250g Crème fouettée"
     ],
-    "instruction": "Faire fondre le chocolat au bain-marie. Réaliser un appareil à bombe : cuire sucre et eau à 118°C et verser sur les jaunes. Fouetter la crème. Mélanger l'appareil à bombe avec le chocolat et incorporer délicatement la crème fouettée[cite: 256, 257, 260, 262, 263]."
+    "instruction": "Faire fondre le chocolat au bain-marie. Réaliser un appareil à bombe : cuire sucre et eau à 118°C et verser sur les jaunes. Fouetter la crème. Mélanger l'appareil à bombe avec le chocolat et incorporer délicatement la crème fouettée."
   },
   {
     "id": 1012,
@@ -234,7 +194,7 @@
       "12 feuilles Gélatine",
       "1 boîte Abricots"
     ],
-    "instruction": "Chauffer crème et vanille. Blanchir jaunes et sucre. Cuire à l'anglaise à 82°C. Ajouter la gélatine ramollie. Verser sur les abricots égouttés et coupés[cite: 266, 267, 270, 272, 273, 274]."
+    "instruction": "Chauffer crème et vanille. Blanchir jaunes et sucre. Cuire à l'anglaise à 82°C. Ajouter la gélatine ramollie. Verser sur les abricots égouttés et coupés."
   },
   {
     "id": 1013,
@@ -248,7 +208,7 @@
       "2 Œufs",
       "250g Beurre"
     ],
-    "instruction": "Réaliser une crème pâtissière de base et incorporer le beurre[cite: 295]."
+    "instruction": "Réaliser une crème pâtissière de base et incorporer le beurre."
   },
   {
     "id": 1014,
@@ -264,7 +224,7 @@
       "80g Rhum",
       "40g Vanille"
     ],
-    "instruction": "Mélanger le beurre pommade avec le sucre. Ajouter la poudre d'amandes, la farine, puis les œufs un à un. Finir par le rhum et la vanille[cite: 297]."
+    "instruction": "Mélanger le beurre pommade avec le sucre. Ajouter la poudre d'amandes, la farine, puis les œufs un à un. Finir par le rhum et la vanille."
   },
   {
     "id": 1015,
@@ -280,7 +240,7 @@
       "15g Fleur de sel",
       "1500g Mascarpone"
     ],
-    "instruction": "Faire bouillir la crème. Faire un caramel à sec avec glucose et sucre. Décuire avec la crème. Ajouter gélatine, beurre et sel. Laisser refroidir 6h, puis ajouter le mascarpone[cite: 317, 319, 320, 321, 322, 323]."
+    "instruction": "Faire bouillir la crème. Faire un caramel à sec avec glucose et sucre. Décuire avec la crème. Ajouter gélatine, beurre et sel. Laisser refroidir 6h, puis ajouter le mascarpone."
   },
   {
     "id": 1016,
@@ -294,7 +254,7 @@
       "1000g Chocolat noir",
       "2000g Crème"
     ],
-    "instruction": "Bouillir lait et glucose. Ajouter la gélatine. Verser sur le chocolat. Ajouter la crème froide et mixer[cite: 325, 326, 327, 328]."
+    "instruction": "Bouillir lait et glucose. Ajouter la gélatine. Verser sur le chocolat. Ajouter la crème froide et mixer."
   },
   {
     "id": 1017,
@@ -308,7 +268,7 @@
       "600g Farine",
       "13.75 Œufs"
     ],
-    "instruction": "Porter l'eau, le sel et le beurre à ébullition. Verser la farine d'un coup et dessécher la pâte. Incorporer les œufs progressivement[cite: 458]."
+    "instruction": "Porter l'eau, le sel et le beurre à ébullition. Verser la farine d'un coup et dessécher la pâte. Incorporer les œufs progressivement."
   },
   {
     "id": 1018,
@@ -324,7 +284,7 @@
       "160g Sucre",
       "120g Beurre"
     ],
-    "instruction": "Monter amandes, glace, œufs et farine. Monter les blancs avec le sucre. Fondre le beurre et l'ajouter au premier mélange. Incorporer les blancs. Cuisson 8-9 min à 170-220°C[cite: 371, 372, 373, 374, 376, 377]."
+    "instruction": "Monter amandes, glace, œufs et farine. Monter les blancs avec le sucre. Fondre le beurre et l'ajouter au premier mélange. Incorporer les blancs. Cuisson 8-9 min à 170-220°C."
   },
   {
     "id": 1019,
@@ -334,30 +294,22 @@
     "ingredients": ["1kg sucre", "1kg farine", "32 oeufs"],
     "instruction": "cuire à 180°C"
   },
+
   {
-    "id": 4005,
-    "categorie": "chocolaterie",
-    "nom": "Ganache Menthe",
-    "tag": ["ganache", "menthe", "chocolat", "bonbon"],
+    "id": 2000,
+    "categorie": "confiserie",
+    "nom": "crocodile gélifié",
+    "tag": ["bonbon", "gélifié", "crocodile"],
     "ingredients": [
-      "650g Crème",
-      "20g Sorbitol",
-      "92g Trimoline",
-      "375g Couverture lait",
-      "1300g Couverture noir",
-      "185g Beurre",
-      "185g Jet 27",
-      "15 gouttes Menthe verte"
+      "70 gr gélatine",
+      "350 gr eau",
+      "515 gr sucre",
+      "423 gr glucose",
+      "135 gr eau",
+      "29 ml solution acide",
+      "9 ml arôme"
     ],
-    "instruction": "Chauffer crème, sorbitol et trimoline. Verser sur les couvertures. Ajouter le beurre, le Jet 27 et l'essence de menthe[cite: 479]."
-  },
-  {
-    "id": 4006,
-    "categorie": "chocolaterie",
-    "nom": "Gianduja",
-    "tag": ["gianduja", "noisette", "chocolat"],
-    "ingredients": ["1600g Praliné", "1700g Gianduja"],
-    "instruction": "Mélanger les deux masses ensemble pour obtenir un intérieur de bonbon ou une base de fourrage[cite: 479]."
+    "instruction": "Pour environ 270 bonbons"
   },
   {
     "id": 2001,
@@ -483,28 +435,30 @@
     ],
     "instruction": "pétrir 5 min en 1ère et 3 min en  2ème\n2 tours double "
   },
+
   {
-    "id": 4030,
+    "id": 4001,
     "categorie": "chocolaterie",
-    "nom": "Pâte d'amande 33%",
-    "tag": ["pâte d'amande", "amande", "base"],
+    "nom": "Ganache Citron (2 cadres)",
+    "tag": ["chocolat", "ganache", "citron", "bonbon"],
     "ingredients": [
-      "125g Amande brut",
-      "50g Eau",
-      "125g Sucre",
-      "30g Glucose",
-      "62g Sucre glace",
-      "45g Sorbitol"
+      "250g Purée de citron",
+      "550g Crème",
+      "17g Sorbitol",
+      "50g Trimoline",
+      "1200g Couverture lait",
+      "500g Couverture noir",
+      "125g Beurre"
     ],
-    "instruction": "Réaliser un sirop avec l'eau, le sucre et le glucose. Verser sur les amandes broyées avec le sucre glace et le sorbitol. Travailler jusqu'à consistance lisse."
+    "instruction": "Chauffer purée, crème, sorbitol et trimoline. Verser sur les couvertures. Incorporer le beurre à température."
   },
   {
-    "id": 4031,
+    "id": 4002,
     "categorie": "chocolaterie",
-    "nom": "Praliné noisette",
-    "tag": ["praliné", "noisette"],
-    "ingredients": ["500g Noisettes", "350g Sucre", "100g Eau"],
-    "instruction": "Torréfier les noisettes. Réaliser un sucre cuit avec l'eau et le sucre, ajouter les noisettes pour les sabler puis les caraméliser. Laisser refroidir et broyer."
+    "nom": "Praliné Nature",
+    "tag": ["praline", "noisette", "chocolat"],
+    "ingredients": ["2000g Praliné", "800g Chocolat lait"],
+    "instruction": "Mélanger le praliné avec le chocolat au lait fondu. Couler en cadre."
   },
   {
     "id": 4003,
@@ -537,6 +491,39 @@
       "125g Beurre"
     ],
     "instruction": "Infuser le café dans la crème chaude avec sorbitol et trimoline. Verser sur les couvertures, émulsionner et ajouter le beurre."
+  },
+  {
+    "id": 4005,
+    "categorie": "chocolaterie",
+    "nom": "Ganache Menthe",
+    "tag": ["ganache", "menthe", "chocolat", "bonbon"],
+    "ingredients": [
+      "650g Crème",
+      "20g Sorbitol",
+      "92g Trimoline",
+      "375g Couverture lait",
+      "1300g Couverture noir",
+      "185g Beurre",
+      "185g Jet 27",
+      "15 gouttes Menthe verte"
+    ],
+    "instruction": "Chauffer crème, sorbitol et trimoline. Verser sur les couvertures. Ajouter le beurre, le Jet 27 et l'essence de menthe[cite: 479]."
+  },
+  {
+    "id": 4006,
+    "categorie": "chocolaterie",
+    "nom": "Gianduja",
+    "tag": ["gianduja", "noisette", "chocolat"],
+    "ingredients": ["1600g Praliné", "1700g Gianduja"],
+    "instruction": "Mélanger les deux masses ensemble pour obtenir un intérieur de bonbon ou une base de fourrage[cite: 479]."
+  },
+  {
+    "id": 4002,
+    "categorie": "chocolaterie",
+    "nom": "Praliné feuilleté",
+    "tag": ["praline", "noisette", "chocolat"],
+    "ingredients": ["1700g Praliné", "650g Chocolat lait", "450gr feuilletine"],
+    "instruction": "Mélanger le praliné avec le chocolat au lait fondu. Couler en cadre."
   },
   {
     "id": 4020,
@@ -648,5 +635,28 @@
       "10g Thé fruit rouge"
     ],
     "instruction": "Infuser le thé dans la crème chaude. Ajouter les sucres, verser sur les chocolats pour la ganache de fourrage."
+  },
+  {
+    "id": 4030,
+    "categorie": "chocolaterie",
+    "nom": "Pâte d'amande 33%",
+    "tag": ["pâte d'amande", "amande", "base"],
+    "ingredients": [
+      "125g Amande brut",
+      "50g Eau",
+      "125g Sucre",
+      "30g Glucose",
+      "62g Sucre glace",
+      "45g Sorbitol"
+    ],
+    "instruction": "Réaliser un sirop avec l'eau, le sucre et le glucose. Verser sur les amandes broyées avec le sucre glace et le sorbitol. Travailler jusqu'à consistance lisse."
+  },
+  {
+    "id": 4031,
+    "categorie": "chocolaterie",
+    "nom": "Praliné noisette",
+    "tag": ["praliné", "noisette"],
+    "ingredients": ["500g Noisettes", "350g Sucre", "100g Eau"],
+    "instruction": "Torréfier les noisettes. Réaliser un sucre cuit avec l'eau et le sucre, ajouter les noisettes pour les sabler puis les caraméliser. Laisser refroidir et broyer."
   }
 ]
