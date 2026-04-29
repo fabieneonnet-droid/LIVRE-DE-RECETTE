@@ -1,54 +1,75 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="connection.css">
+    <link rel="stylesheet" href="./connection.css">
 </head>
 
 <body>
+    <div class="book-container">
+        <div class="book" id="recipeBook">
+            <div class="cover">
+                <div class="cover-front">
+                    <h1>Mon Livre</h1>
+                    <p>de Recettes</p>
+                    <img src="./assets/img/Gemini_Generated_Image_941pfg941pfg941p.png"
+                        alt="Photo de pain, patisserie, confiserie, chocolat, viennoiserie et glace ">
+                    <p>Cliquez ici pour ouvrir</p>
+                </div>
+                <div class="cover-back">
+                    <div class="page left-page">
+                        <h3>Une passion</h3>
+                        <p>Depuis mon plus jeune âge, la pâtisserie a exercé sur moi une fascination irrésistible. Très
+                            vite, une évidence s'est imposée : je voulais transformer cette passion en métier.
+                            <br>
+                            <br>
+                            Pour moi, la pâtisserie est une forme de magie. C’est cet art délicat où, à partir
+                            d’ingrédients simples, on façonne des créations qui émerveillent autant les yeux que les
+                            papilles. C'est un métier de cœur qui invite au partage, à la joie et qui, au-delà des
+                            saveurs, distille un peu de bonheur à chaque bouchée.
+                        </p>
+                        <div class="img-end">
+                            <img src="./assets/img/Gemini_Generated_Image_8yt9ij8yt9ij8yt9.webp"
+                                alt="ma passion de la pâtisserie">
+                        </div>
 
 
-    <div class="container"><!-- État fermé - Le livre -->
-        <div class="book-closed" id="bookClosed">
-            <div class="book-title">
-                <h1>Mon Livre</h1>
-                <p>de Recettes</p>
+                    </div>
+
+                </div>
             </div>
-            <div class="book-icon">
-                <img src="./assets/img/Gemini_Generated_Image_941pfg941pfg941p.png" alt="">
-            </div>
-            <div class="click-hint">
-                Cliquez pour ouvrir
+
+            <div class="inside-pages">
+                <div class="page right-page">
+                    <div class="book-open" id="bookOpen">
+                        <div class="form-container">
+                            <h2>Bienvenue!</h2>
+                            <p class="form-subtitle">Entrez vos informations pour commencer</p>
+                            <form id="welcomeForm">
+                                <div class="form-group"><label for="email">Email</label> <input type="email" id="email"
+                                        name="email" placeholder="votre.email@exemple.com" required>
+                                </div>
+                                <div class="form-group"><label for="name">Nom</label> <input type="text" id="name"
+                                        name="name" placeholder="Votre nom" required>
+                                </div>
+                                <div class="form-groupe"><label for="passeword">Mot de passe</label> <input
+                                        type="password" id="passeword" name="passeword" placeholder="Mot de passe"
+                                        required></div>
+                                <button type="submit" class="submit-btn">Découvrir mes recettes</button>
+                                <div class="success-message" id="successMsg">
+                                    ✓ Bienvenue {name}! Vos recettes vous attendent... 🍳
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div><!-- État ouvert - Le formulaire -->
-    <div class="book-open" id="bookOpen"><button class="close-btn" id="closeBtn">✕</button>
-        <div class="form-container">
-            <h2>Bienvenue!</h2>
-            <p class="form-subtitle">Entrez vos informations pour commencer</p>
-            <form id="welcomeForm">
-                <div class="form-group"><label for="email">Email</label> <input type="email" id="email" name="email"
-                        placeholder="votre.email@exemple.com" required>
-                </div>
-                <div class="form-group"><label for="name">Nom</label> <input type="text" id="name" name="name"
-                        placeholder="Votre nom" required>
-                </div>
-                <div class="form-groupe"><label for="passeword">Mot de passe</label> <input type="password"
-                        id="passeword" name="passeword" placeholder="Mot de passe" required></div>
-                <button type="submit" class="submit-btn">Découvrir mes recettes</button>
-                <div class="success-message" id="successMsg">
-                    ✓ Bienvenue {name}! Vos recettes vous attendent... 🍳
-                </div>
-            </form>
-        </div>
-    </div>
 
-
-
-    <script src="./connection.js"></script>
+        <script src="./connection.js"></script>
 </body>
 
 </html>
