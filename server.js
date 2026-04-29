@@ -7,7 +7,7 @@ const app = express();
 const PORT = 3000;
 
 // --- CONFIGURATION SUPABASE ---
-const supabaseUrl = "https://nyyrwsnzqvxcbbevfymo";
+const supabaseUrl = "https://nyyrwsnzqvxcbbevfymo.supabase.co";
 const supabaseKey = "sb_publishable_oG4jPZy_5eyd9PfznFCqwg_9XwUWxWt";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 // 1. Route pour lire les recettes depuis Supabase
 app.get("/recettes", async (req, res) => {
-  const { data, error } = await supabase.from("recettes").select("*");
+  const { data, error } = await supabase.from("RECETTES").select("*");
 
   if (error) return res.status(500).json(error);
   res.send(data);
@@ -27,7 +27,7 @@ app.post("/ajouter-recette", async (req, res) => {
   const nouvelleRecette = req.body;
 
   const { data, error } = await supabase
-    .from("recettes")
+    .from("RECETTES")
     .insert([nouvelleRecette]);
 
   if (error) return res.status(500).json(error);
