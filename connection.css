@@ -188,6 +188,7 @@ body {
 
     .form-group {
       margin-bottom: 25px;
+      text-align: center;
     }
 
     label {
@@ -198,13 +199,14 @@ body {
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
+      text-align: center;
     }
 
     input[type="email"],
     input[type="text"],
     input[type= "password"] {
       width: 75%;
-      padding: 12px 15px;
+      padding: 12px 30px;
       border: 2px solid #d4a574;
       border-radius: 8px;
       font-family: 'Georgia', serif;
@@ -212,6 +214,7 @@ body {
       color: #2c1810;
       transition: all 0.3s ease;
       background-color: #fefdfb;
+      
     }
 
     input[type="email"]:focus,
@@ -225,6 +228,8 @@ body {
 
     input::placeholder {
       color: #a0845e;
+      text-align: center;
+      opacity: 0.4;
     }
 
     .submit-btn {
