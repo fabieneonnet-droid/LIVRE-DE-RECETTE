@@ -43,31 +43,29 @@
             </div>
 
             <div class="inside-pages">
-                <div class="page right-page">
-                    <div class="book-open" id="bookOpen">
-                        <div class="form-container">
-                            <h2>Bienvenue!</h2>
-                            <p class="form-subtitle">Entrez vos informations pour commencer</p>
-                            <form id="welcomeForm">
-                                <div class="form-group"><label for="email">Email</label> <input type="email" id="email"
-                                        name="email" placeholder="votre.email@exemple.com" required>
-                                </div>
-                                <div class="form-groupe"><label for="passeword">Mot de passe</label> <input
-                                        type="password" id="passeword" name="passeword" placeholder="Mot de passe"
-                                        required></div>
-                                <button type="submit" class="submit-btn">Découvrir mes recettes</button>
-                                <div class="success-message" id="successMsg">
-                                    ✓ Bienvenue {name}! Vos recettes vous attendent... 🍳
-                                </div>
-                            </form>
-                        </div>
+                <div class="page right-page" <div class="book-open" id="bookOpen">
+                    <div class="form-container">
+                        <h2>Bienvenue!</h2>
+                        <p class="form-subtitle">Entrez vos informations pour commencer</p>
+                        <form id="welcomeForm">
+                            <div class="form-group"><label for="email">Email</label> <input type="email" id="email"
+                                    name="email" placeholder="votre.email@exemple.com" required>
+                            </div>
+                            <div class="form-groupe"><label for="passeword">Mot de passe</label> <input type="password"
+                                    id="passeword" name="passeword" placeholder="Mot de passe" required></div>
+                            <button type="submit" class="submit-btn">Découvrir mes recettes</button>
+                            <div class="success-message" id="successMsg">
+                                ✓ Bienvenue {name}! Vos recettes vous attendent... 🍳
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-        <script src="./connection.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./connection.js"></script>
 </body>
 
 </html>

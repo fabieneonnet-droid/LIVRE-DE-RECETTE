@@ -11,9 +11,9 @@ body {
 }
 
 .book-container {
-    perspective: 1500px;
-    width: 100%;
-      height: 100%;
+    perspective: 10000px;
+    width: 48%;
+      height: 48%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -59,6 +59,7 @@ body {
     font-size: 2.5rem;
       color: #d4a574;
       font-style: italic;
+      text-align: center;
 }
 
 .book.open .cover {
@@ -76,7 +77,7 @@ body {
     justify-content: center;
 }
 .cover-front img{
-      max-width: 600px;
+      max-width: 350px;
        margin-top: 80px;
     border-radius: 15px; 
     
@@ -124,15 +125,16 @@ body {
 }
 .cover-back p{
     text-shadow: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: black;
 }
-.end-img{
+.img-end {
     text-align: center;
 }
 .cover-back img{
-    max-width: 350px;
-    margin:5px 140px;
+    max-width: 270px;
+    padding-top: 35px;
+    
     
 }
 /* 3. IMPORTANT : Pour que le texte ne soit pas écrit en miroir */
@@ -149,7 +151,7 @@ body {
     }
 
     .form-container {
-      width: 100%;
+      width: 75%;
       max-width: 580px;
       background: #f4e4c1;
       padding: 20px;
@@ -194,7 +196,7 @@ body {
     label {
       display: block;
       color: #2c1810;
-      font-size: 2rem;
+      font-size: 1.5rem;
       margin-bottom: 8px;
       font-weight: 600;
       text-transform: uppercase;
@@ -210,7 +212,7 @@ body {
       border: 2px solid #d4a574;
       border-radius: 8px;
       font-family: 'Georgia', serif;
-      font-size: 2rem;
+      font-size: 1rem;
       color: #2c1810;
       transition: all 0.3s ease;
       background-color: #fefdfb;

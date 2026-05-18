@@ -24,19 +24,31 @@ body {
     justify-content: center;
     padding-bottom: 30px;
 }
-.img-header{
-    max-width: 150px;
+.header-container img{
+    padding-top: 10px;
 }
+@media screen and (max-width:1057px) {
+    .header-container img{
+        padding-top: 50px;
+    }
+}
+
+
 h1 {
     font-family: "playfair", serif;
     text-align: center;
-    font-size: 5rem;
+    font-size: 4rem;
     text-transform: uppercase;
     color: rgb(255, 161, 74);
     text-shadow: 5px 5px 3px black;
     letter-spacing: 5px;
     margin: 0;
     padding: 25px;
+}
+@media screen and (max-width:1900px) {
+    h1{
+        font-size: 3rem;
+    }
 }
 .descritif-container{
     font-family: "comorant", serif;
@@ -63,8 +75,12 @@ h3{
     letter-spacing: 2px;
     text-shadow: 1px 1px 2px #faa330;
 }
+.search-container{
+    background: rgb(1, 1, 44);
+}
 .categorie-container{
     margin: 0;
+
 }
 
 .up-blue {
@@ -80,6 +96,19 @@ h3{
     z-index: 10; 
     position: relative; 
     display: inline-flex;
+}
+@media screen and (max-width:1900px) {
+    .categorie{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr ;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .categorie{
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+    }
 }
 
 .recipe-card {
@@ -111,7 +140,6 @@ input,label,select,textarea{
    padding: 8px;
 }
 
-
 .recette {
     background: white;
     padding: 10px;
@@ -128,9 +156,9 @@ input,label,select,textarea{
     border-radius: 25px;
     box-shadow: -1px -1px 5px 1px rgba(0, 0, 0, 0.644);
     background-image: linear-gradient(160deg, rgba(255, 255, 255, 0.418) 0%, rgba(255, 255, 255, 0.651) 100%);
-    margin: 10px;
-    
+    margin: 10px; 
 }
+
 .hidden{
     display: none;
 }
@@ -266,24 +294,23 @@ button:hover{
     font-size: 2.1rem;
     
 }
-/* On crée un container pour centrer la liste elle-même, mais garder le texte à gauche */
+
 .container-liste {
     display: flex;
-    justify-content: center; /* Centre la liste dans la modale */
-    text-align: left;       /* Aligne le texte des ingrédients à gauche */
+    justify-content: center;
+    text-align: left;      
     margin: 20px 0;
 }
 
 .ma-liste-rectte {
     display: block !important;
-    list-style-type: disc !important; /* Force les points */
+    list-style-type: disc !important; 
     padding-left: 20px !important;
     margin: 0;
 }
 
 .ma-liste-rectte li {
-    display: list-item !important; /* INDISPENSABLE pour voir la puce */
-    margin-bottom: 8px;
+    display: list-item !important; 
     font-family: Arial, sans-serif;
 }
 
