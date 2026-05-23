@@ -77,6 +77,12 @@ function ouvrirModale(recette) {
   modalDetails.innerHTML = `
       <h2 style="text-align: center;">${recette.nom}</h2>
       <p style="text-align: center;"><strong>Catégorie :</strong> ${recette.categorie}</p>
+
+      <div class="logo-pdf">  
+        <img src="./assets/symbol/print_24dp_F19E39_FILL0_wght400_GRAD0_opsz24.png" style="padding: 10px 40px;">
+        <img src="./assets/symbol/share_24dp_F19E39_FILL0_wght400_GRAD0_opsz24.png" style="padding: 10px 40px;">
+        <img src="./assets/symbol/download_24dp_F19E39_FILL0_wght400_GRAD0_opsz24.png" style="padding: 10px 40px;">
+      </div>
       <hr>
       <h3>Ingrédients :</h3>
       <div class="container-liste">

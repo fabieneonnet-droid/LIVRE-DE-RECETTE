@@ -304,7 +304,7 @@ button:hover{
 
 .ma-liste-rectte {
     display: block !important;
-    list-style-type: disc !important; 
+    list-style-type: none ; 
     padding-left: 20px !important;
     margin: 0;
 }
@@ -320,3 +320,8 @@ button:hover{
     line-height: 1.6;
 }
 
+.logo-pdf{
+    cursor: pointer;
+    padding: 15px 30px;
+    
+}
