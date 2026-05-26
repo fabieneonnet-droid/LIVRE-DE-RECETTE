@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <title>Mes Recettes</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css" />
-</head>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#F19E39">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
 <body>
     <div class="header-container">
@@ -112,6 +115,15 @@
     </div>
 
     <script src="index.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(reg => console.log('Service Worker enregistré !', reg))
+                    .catch(err => console.error('Erreur de Service Worker :', err));
+            });
+        }
+    </script>
 </body>
 
 </html>
