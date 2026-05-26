@@ -1,3 +1,7 @@
+const supabaseUrl = "https://nyyrwsnzqvxcbbevfymo.supabase.co";
+const supabaseKey = "sb_publishable_oG4jPZy_5eyd9PfznFCqwg_9XwUWxWt";
+const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
 const listeElement = document.getElementById("listeRecettes");
 const barreRecherche = document.getElementById("recherche");
 const menuCategories = document.getElementById("categories");
@@ -9,14 +13,18 @@ const closeModalBtn = document.querySelector(".close-modal");
 
 let toutesLesRecettes = [];
 
-// 1. Chargement des données
-fetch("http://localhost:3000/recettes")
-  .then((res) => res.json())
-  .then((data) => {
+async function chargerRecettes() {
+  const { data, error } = await _supabase.from("RECETTES").select("*");
+  if (error) {
+    console.error("Erreur de chargement Supabase:", error);
+  } else {
     toutesLesRecettes = data;
     afficherRecettes(toutesLesRecettes);
-  })
-  .catch((err) => console.error("Erreur chargement:", err));
+  }
+}
+
+// On lance le chargement
+chargerRecettes();
 
 // 2. Recherche
 barreRecherche.addEventListener("input", (e) => {
@@ -206,17 +214,21 @@ recipeForm.addEventListener("submit", (e) => {
     ingredients: ingredientsArray,
     instruction: instruction,
   };
-
-  fetch("http://localhost:3000/ajouter-recette", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(nouvelleRecette),
-  })
-    .then((res) => res.json())
-    .then((response) => {
-      alert("Recette ajoutée !");
+  // Dans ton welcomeForm.addEventListener('submit', ...), remplace le fetch par :
+  async function sauvegarderRecette(nouvelleRecette) {
+    const { data, error } = await _supabase
+      .from("RECETTES")
+      .insert([nouvelleRecette]);
+    if (error) {
+      alert("Erreur lors de l'enregistrement : " + error.message);
+    } else {
+      alert("Recette enregistrée dans le Cloud !");
       location.reload();
-    });
+    }
+  }
+
+  // Appelle cette fonction à la place de ton ancien fetch()
+  sauvegarderRecette(nouvelleRecette);
 });
 
 function genererProchainID(categorie) {
