@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Mes Recettes</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#F19E39">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+<body>
+    <div class="header-container">
+        <img src="./assets/img/cabosse.png" height=120px alt="cabosse cacao">
+        <h1> Livre de recettes </h1>
+        <img src="./assets/img/cabosse.png" height=120px alt="cabosse cacao">
+
+    </div>
+    <div class="descritif-container">
+        <p>Passionnée par l'authenticité des saveurs et le plaisir d'un travail bien fait.</p>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="recherche" placeholder=" Rechercher une recette...">
+    </div>
+
+    <div class="categorie-container">
+        <div class="up-blue"></div>
+        <ul class=categorie id="categories">
+            <li class="cat-item boulangerie  ">
+                <div class="recettes-wrapper" id="list-boulangerie">
+                    <img src="./assets/img/quel-pain-choisir-pour-sa-sante-1614002068.PNG" height="200" alt="">
+                </div>
+                <strong>Boulangerie</strong>
+            </li>
+            <li class="cat-item   ">
+                <div class="recettes-wrapper" id="list-patisserie">
+                    <img src="./assets/img/images.webp" alt="">
+                </div>
+                <strong>Pâtisserie </strong>
+            </li>
+            <li class="cat-item  ">
+                <div class="recettes-wrapper" id="list-confiserie">
+                    <img src="./assets/img/La-confiserie-en-croissance-en-2021-apres-une-mauvaise-annee-2020-pointsdevente.jpg"
+                        alt="">
+                </div>
+                <strong>Confiserie </strong>
+            </li>
+            <li class="cat-item  ">
+                <div class="recettes-wrapper" id="list-viennoiserie">
+                    <img src="./assets/img/calories-comparaison-viennoiseries.jpg" alt="">
+                </div>
+                <strong>Viennoiserie </strong>
+            </li>
+            <li class="cat-item  ">
+                <div class="recettes-wrapper" id="list-chocolaterie">
+                    <img src="./assets/img/sebastien-et-la-chocolaterie-1600x900.png" alt="">
+                </div>
+                <strong>Chocolaterie </strong>
+            </li>
+            <li class="cat-item  ">
+                <div class="recettes-wrapper box" id="list-glacerie">
+                    <img src="./assets/img/pot-glacerie-artisanale-768x431.jpeg.webp" alt="">
+                </div>
+                <strong>Glacerie </strong>
+            </li>
+        </ul>
+    </div>
+
+
+    <div>
+        <button id="addRecipeBtn" class="fab-button">
+            <img src="./assets/symbol/add_circle_50dp_F19E39_FILL0_wght400_GRAD0_opsz48.png" alt="">
+        </button>
+
+
+        <div id="recipeModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Nouvelle Recette</h2>
+
+                <form id="recipeForm">
+                    <input type="text" id="recipeName" placeholder="Nom de la création...">
+                    <br>
+                    <label for="categorie"></label>
+                    <select id="categorie">
+                        <option value="boulangerie">Boulangerie</option>
+                        <option value="patisserie">Pâtisserie</option>
+                        <option value="confiserie">Confiserie</option>
+                        <option value="viennoiserie">Viennoiserie</option>
+                        <option value="chocolaterie">Chocolaterie</option>
+                        <option value="glacerie">Glacerie</option>
+                    </select>
+                    <br>
+                    <textarea id="recipeIngredient" placeholder="Entrez un ingrédient par ligne (ex: 500g Farine)"
+                        cols="45" rows="5"></textarea>
+                    <br>
+                    <textarea id="recipeInstruction" placeholder="Instruction" cols="45" rows="5"></textarea>
+                    <br>
+                    <button type="submit" class="save-btn">Enregistrer</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="listeRecettes"></div>
+
+        <div id="modalRecette" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div id="modalDetails">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="recettes.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(reg => console.log('Service Worker enregistré !', reg))
+                    .catch(err => console.error('Erreur de Service Worker :', err));
+            });
+        }
+    </script>
+</body>
+
+</html>
