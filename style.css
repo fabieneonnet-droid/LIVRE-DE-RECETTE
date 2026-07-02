@@ -307,17 +307,23 @@ button:hover{
     list-style-type: none ; 
     padding-left: 20px !important;
     margin: 0;
+    
+    
 }
 
 .ma-liste-rectte li {
     display: list-item !important; 
     font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    padding: 10px;
+    
 }
 
 .instruction-texte {
     text-align: justify;
     padding: 0 20px;
-    line-height: 1.6;
+    line-height: 1.2;
 }
 
 .logo-pdf{
@@ -325,3 +331,4 @@ button:hover{
     padding: 15px 30px;
     
 }
+

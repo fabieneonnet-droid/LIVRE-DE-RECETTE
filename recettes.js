@@ -89,7 +89,7 @@ function ouvrirModale(recette) {
 
   // 1. On injecte le HTML (Ajout d'id "pdf-..." sur les images et d'un id "zone-pdf" sur le contenu)
   modalDetails.innerHTML = `
-    <div id="zone-pdf" style="padding: 10px;">
+    <div id="zone-pdf" style="padding: 0px;">
       <h2 style="text-align: center; margin-top: 0;">${recette.nom}</h2>
       <p style="text-align: center;"><strong>Catégorie :</strong> ${recette.categorie}</p>
 
@@ -107,7 +107,7 @@ function ouvrirModale(recette) {
       </div>
       <hr>
       <h3>Instructions :</h3>
-      <p class="instruction-texte" style="white-space: pre-line;">${recette.instruction}</p>
+      <p class="instruction-texte" style="white-space: pre-line; font-size: 1.2rem">${recette.instruction}</p>
     </div>
   `;
 
@@ -116,10 +116,10 @@ function ouvrirModale(recette) {
   // 2. Configuration pour l'export PDF
   const elementAElements = document.getElementById("zone-pdf");
   const options = {
-    margin: 5,
+    margin: 0,
     filename: `${recette.nom.toLowerCase().replace(/\s+/g, "-")}.pdf`,
     image: { type: "jpeg", quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true }, // scale: 2 évite le flou
+    html2canvas: { scale: 1, useCORS: true }, // scale: 2 évite le flou
     jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
     ignoreElements: (el) => el.id === "actions-recette", // Masque les boutons d'action sur le PDF imprimé !
   };
