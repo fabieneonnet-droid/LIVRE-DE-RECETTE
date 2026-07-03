@@ -171,11 +171,16 @@ input,label,select,textarea{
     margin: 10px; 
 }
 @media screen and (max-width:1000px) {
-    .recette-card p {
-        display: none
-        
+    .recette-card h3 {
+        font-size: 1rem
     }
 }
+@media screen and (max-width:1000px) {
+    .recette-card p {
+        display: none  
+    }
+}
+
 .hidden{
     display: none;
 }
@@ -188,7 +193,11 @@ input,label,select,textarea{
     margin-top: 15px;
     margin-bottom: 30px;
 }
-
+@media screen and (max-width:1000px) {
+    .cat-item  {
+        margin: 0;
+    }
+}
 .cat-item img{
     border-radius: 25px;
     align-content: center;
@@ -200,8 +209,9 @@ input,label,select,textarea{
 }
 @media screen and (max-width:1000px) {
     .cat-item img {
-        max-height: 80px;
-        max-width: 200px;
+        max-height: 100px;
+        max-width: 100px;
+        min-height: 0px;
     }
 }
 .cat-item:hover {
