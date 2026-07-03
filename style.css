@@ -103,11 +103,11 @@ h3{
         grid-template-columns: 1fr 1fr 1fr ;
     }
 }
-
 @media screen and (max-width:1000px) {
     .categorie{
         display: grid;
         grid-template-columns: 1fr 1fr ;
+        padding: 5px;
     }
 }
 
@@ -124,8 +124,13 @@ ul{
 li{
     padding: 25px;
     font-size: 2rem;
-    
 }
+@media screen and (max-width:1000px) {
+    li{
+        font-size: 1rem;
+    }
+}  
+
 p{
     color: #4e4d4db4;
     letter-spacing: 3px;
@@ -155,6 +160,7 @@ input,label,select,textarea{
     #listeRecettes{
         display: grid;
         grid-template-columns: 50% 50% ;
+        font-size: 2rem;
     }
 }
 .recette-card{
@@ -167,6 +173,7 @@ input,label,select,textarea{
 @media screen and (max-width:1000px) {
     .recette-card p {
         display: none
+        
     }
 }
 .hidden{
@@ -180,8 +187,8 @@ input,label,select,textarea{
     margin: 0 25px;
     margin-top: 15px;
     margin-bottom: 30px;
-   
 }
+
 .cat-item img{
     border-radius: 25px;
     align-content: center;
@@ -190,6 +197,12 @@ input,label,select,textarea{
     text-align: center;
     max-height: 200px;
     max-width: 250px;
+}
+@media screen and (max-width:1000px) {
+    .cat-item img {
+        max-height: 80px;
+        max-width: 200px;
+    }
 }
 .cat-item:hover {
     color: rgb(255, 161, 74);
