@@ -19,13 +19,58 @@ const closeModalBtn = document.querySelector(".close-modal");
 let toutesLesRecettes = [];
 
 async function chargerRecettes() {
-  const { data, error } = await _supabase.from("RECETTES").select("*");
-  if (error) {
-    console.error("Erreur de chargement Supabase:", error);
-  } else {
-    toutesLesRecettes = data;
-    afficherRecettes(toutesLesRecettes);
+  // 1. On charge les recettes
+  const { data: recettes, error: errRecettes } = await _supabase
+    .from("RECETTES")
+    .select("*");
+
+  if (errRecettes) {
+    console.error("Erreur recettes:", errRecettes);
+    return;
   }
+
+  // 2. On charge les liaisons
+  const { data: liaisons, error: errLiaisons } = await _supabase
+    .from("composition_recette")
+    .select("*");
+
+  if (errLiaisons) {
+    console.error("Erreur liaisons:", errLiaisons);
+    toutesLesRecettes = recettes;
+    afficherRecettes(toutesLesRecettes);
+    return;
+  }
+
+  // --- LE DÉTECTEUR (LOGS DE DÉBOGAGE) ---
+  // console.log("--- VÉRIFICATION DES DONNÉES SUPABASE ---");
+  // console.log("Liste de TOUTES les recettes chargées :", recettes);
+  // console.log("Liste de TOUTES les liaisons chargées :", liaisons);
+  // ---------------------------------------
+
+  // 3. Assemblage en forçant les types
+  toutesLesRecettes = recettes.map((recette) => {
+    // On cherche les liaisons pour cette recette
+    const liens = liaisons.filter(
+      (l) =>
+        String(l.recette_principale_id).trim() === String(recette.id).trim(),
+    );
+
+    recette.composition = liens
+      .map((lien) => {
+        const sousRecette = recettes.find(
+          (r) => String(r.id).trim() === String(lien.sous_recette_id).trim(),
+        );
+        return {
+          ordre_montage: lien.ordre_montage,
+          sous_recette: sousRecette,
+        };
+      })
+      .sort((a, b) => a.ordre_montage - b.ordre_montage);
+
+    return recette;
+  });
+
+  afficherRecettes(toutesLesRecettes);
 }
 
 // On lance le chargement
@@ -87,32 +132,100 @@ function afficherRecettes(recettes) {
 function ouvrirModale(recette) {
   const lesIngredients = recette.ingredients || recette.ingredient || [];
 
-  // 1. On injecte le HTML (Ajout d'id "pdf-..." sur les images et d'un id "zone-pdf" sur le contenu)
-  modalDetails.innerHTML = `
-    <div id="zone-pdf" style="padding: 0px;">
-      <h2 style="text-align: center; margin-top: 0;">${recette.nom}</h2>
-      <p style="text-align: center;"><strong>Catégorie :</strong> ${recette.categorie}</p>
+  // 1. On prépare le HTML des sous-recettes de manière ultra-sécurisée
+  let composantsHTML = "";
+  if (recette && recette.composition && recette.composition.length > 0) {
+    const sousRecettesValides = recette.composition.filter(
+      (item) => item && item.sous_recette,
+    );
 
-      <div class="logo-pdf" id="actions-recette">  
-        <img id="pdf-imprimer" src="./assets/symbol/print_24dp_F19E39_FILL0_wght400_GRAD0_opsz24.png" style="padding: 10px 40px; cursor: pointer;" title="Imprimer">
-        <img id="pdf-partager" src="./assets/symbol/share_24dp_F19E39_FILL0_wght400_GRAD0_opsz24.png" style="padding: 10px 40px; cursor: pointer;" title="Partager">
-        <img id="pdf-telecharger" src="./assets/symbol/download_24dp_F19E39_FILL0_wght400_GRAD0_opsz24.png" style="padding: 10px 40px; cursor: pointer;" title="Télécharger">
-      </div>
+    if (sousRecettesValides.length > 0) {
+      composantsHTML = `
       <hr>
-      <h3>Ingrédients :</h3>
-      <div class="container-liste">
-        <ul class="ma-liste-rectte">
-            ${lesIngredients.map((ing) => `<li>${ing}</li>`).join("")}
-        </ul>
-      </div>
-      <hr>
-      <h3>Instructions :</h3>
-      <p class="instruction-texte" style="white-space: pre-line; font-size: 1.2rem">${recette.instruction}</p>
+      <h3 style="color: #F19E39;">Composants à préparer :</h3>
+    `;
+
+      sousRecettesValides.forEach((item) => {
+        const sub = item.sous_recette;
+
+        // --- SÉCURISATION ACCENT / SANS ACCENT ---
+        // On récupère les ingrédients qu'ils soient stockés avec ou sans accent
+        const donneesIngredients = sub.ingrédients || sub.ingredients;
+
+        let subIngHtml = "";
+        if (donneesIngredients) {
+          let subIngList = [];
+
+          if (typeof donneesIngredients === "string") {
+            try {
+              subIngList = JSON.parse(donneesIngredients);
+            } catch (e) {
+              subIngList = [donneesIngredients];
+            }
+          } else if (Array.isArray(donneesIngredients)) {
+            subIngList = donneesIngredients;
+          }
+
+          if (Array.isArray(subIngList) && subIngList.length > 0) {
+            subIngHtml = subIngList
+              .map((ing) => {
+                if (typeof ing === "object" && ing !== null) {
+                  return `<li>${ing.quantite ? ing.quantite + " " : ""}${ing.nom || ""}</li>`;
+                }
+                return `<li>${ing}</li>`;
+              })
+              .join("");
+          }
+        }
+        // -----------------------------------------------------------------
+
+        composantsHTML += `
+        <div class="sous-recette-bloc" style="margin-left: 15px; margin-bottom: 25px; padding: 10px; border-left: 3px solid #F19E39; background-color: #fafafa;">
+          <h4 style="margin-top: 0; margin-bottom: 5px; font-size: 1.3rem;">
+            ${item.ordre_montage}. ${sub.nom}
+          </h4>
+          
+          <p style="margin: 5px 0; font-size: 0.95rem;"><strong>Ingrédients pour le composant :</strong></p>
+          <ul style="list-style-type: none; padding-left: 20px; margin-bottom: 5px;font-size: 0.10rem;">
+            ${subIngHtml || "<li>Aucun ingrédient spécifié</li>"}
+          </ul>
+          
+          <p style="margin: 5px 0; font-size: 0.95rem;"><strong>Procédé :</strong></p>
+          <p style="white-space: pre-line; margin-top: 5px; font-size: 1rem; color: #444;">${sub.instruction || "Aucune instruction"}</p>
+        </div>
+      `;
+      });
+    }
+  }
+  // 2. On injecte le HTML global (Inchangé, composantsHTML est maintenant beaucoup plus complet)
+  modalDetails.innerHTML = `
+  <div id="zone-pdf" style="padding: 0px;">
+    <h2 style="text-align: center; margin-top: 0;">${recette.nom || ""}</h2>
+    <p style="text-align: center;"><strong>Catégorie :</strong> ${recette.categorie || ""}</p>
+
+    <div class="logo-pdf" id="actions-recette">  
+      <img id="pdf-imprimer" src="./assets/symbol/print_24dp_F19E39_FILL0_wght400_GRAD0_opsz24.png" style="padding: 10px 40px; cursor: pointer;" title="Imprimer">
+      <img id="pdf-partager" src="./assets/symbol/share_24dp_F19E39_FILL0_wght400_GRAD0_opsz24.png" style="padding: 10px 40px; cursor: pointer;" title="Partager">
+      <img id="pdf-telecharger" src="./assets/symbol/download_24dp_F19E39_FILL0_wght400_GRAD0_opsz24.png" style="padding: 10px 40px; cursor: pointer;" title="Télécharger">
     </div>
-  `;
+    <hr>
+    <h3>Ingrédients :</h3>
+    <div class="container-liste">
+      <ul class="ma-liste-rectte">
+          ${Array.isArray(lesIngredients) ? lesIngredients.map((ing) => `<li>${ing}</li>`).join("") : ""}
+      </ul>
+    </div>
+    
+    <!-- Ici vont s'afficher les recettes complètes de la génoise, de la mousse, etc. -->
+    ${composantsHTML}
+    
+    <hr>
+    <h3>Instructions (Montage) :</h3>
+    <p class="instruction-texte" style="white-space: pre-line; font-size: 1.2rem">${recette.instruction || ""}</p>
+  </div>
+`;
 
   modal.style.display = "block";
-
   // 2. Configuration pour l'export PDF
   const elementAElements = document.getElementById("zone-pdf");
   const options = {
