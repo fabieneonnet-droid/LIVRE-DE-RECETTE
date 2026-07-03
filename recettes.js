@@ -116,22 +116,23 @@ function ouvrirModale(recette) {
   // 2. Configuration pour l'export PDF
   const elementAElements = document.getElementById("zone-pdf");
   const options = {
-    margin: 0,
+    margin: 15, // Marges de 15mm tout autour du papier A4
     filename: `${recette.nom.toLowerCase().replace(/\s+/g, "-")}.pdf`,
     image: { type: "jpeg", quality: 0.98 },
-    html2canvas: { scale: 1, useCORS: true }, // scale: 2 évite le flou
+    html2canvas: {
+      scale: 2,
+      useCORS: true,
+      type: "print", // <-- FORCE HTML2PDF À UTILISER LE STYLE @MEDIA PRINT
+    },
     jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-    ignoreElements: (el) => el.id === "actions-recette", // Masque les boutons d'action sur le PDF imprimé !
+    pagebreak: { mode: ["avoid-all", "css"] },
+    ignoreElements: (el) => el.id === "actions-recette",
   };
-
-  // 3. Liaison des actions aux boutons fraîchement créés
-
-  // ACTION : TÉLÉCHARGER
+  // 3. Liaison des actions
   document.getElementById("pdf-telecharger").addEventListener("click", () => {
     html2pdf().set(options).from(elementAElements).save();
   });
 
-  // ACTION : IMPRIMER
   document.getElementById("pdf-imprimer").addEventListener("click", () => {
     html2pdf()
       .set(options)
@@ -146,7 +147,6 @@ function ouvrirModale(recette) {
       });
   });
 
-  // ACTION : PARTAGER
   document
     .getElementById("pdf-partager")
     .addEventListener("click", async () => {
@@ -170,7 +170,7 @@ function ouvrirModale(recette) {
         }
       } else {
         alert(
-          "Le partage direct n'est pas disponible sur ce navigateur. Vous pouvez télécharger le PDF.",
+          "Le partage direct n'est pas disponible. Vous pouvez télécharger le PDF.",
         );
       }
     });
