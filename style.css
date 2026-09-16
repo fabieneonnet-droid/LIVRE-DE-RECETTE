@@ -242,8 +242,8 @@ input,label,select,textarea{
     margin: 10% auto; 
     padding: 20px;
     border-radius: 10px;
-    width: 80%; 
-    max-width: 500px; 
+    width: 75%; 
+    max-width: 400px; 
     position: relative;
     box-shadow: -4px 4px 10px #faa330;
 }
