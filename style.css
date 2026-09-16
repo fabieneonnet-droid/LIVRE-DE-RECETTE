@@ -247,7 +247,11 @@ input,label,select,textarea{
     position: relative;
     box-shadow: -4px 4px 10px #faa330;
 }
-
+@media screen and (max-width:500px) {
+    .modal-content{
+        width: 100vh;
+    }
+}
 
 .close-modal {
     color: #aaa;
